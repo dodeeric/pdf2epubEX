@@ -2,13 +2,14 @@
 
 This bash script uses the pdf2htmlEX tool to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
 
-The original file layout is retained and fonts are embedded.
+The layout is retained and all the fonts are embedded.
 
 The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitmap and/or vector images).
 
 Usage: ./pdf2epubEX.sh myfile.pdf
 
 The PDF file has to be in the same directory as the script.
+
 Result will be: myfile.epub
 
 Prerequisites: 
