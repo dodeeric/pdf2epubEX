@@ -8,6 +8,12 @@ The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitm
 
 Based on the bash scripts first written by Robert Clayton (RNCTX) on following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
+Usage: ./pdf2epubEX.sh myfile.pdf
+
+Result will be: myfile.epub
+
+You have to install pdf2htmlEX before using the script.
+
 Repositories for pdf2htmlEX:
 
 - The original one: https://github.com/coolwanglu/pdf2htmlEX
