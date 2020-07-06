@@ -92,9 +92,9 @@ mkdir ./bookroot/OEBPS/
 mv *.css ./bookroot/OEBPS/
 mv *.woff ./bookroot/OEBPS/
 mv *.xhtml ./bookroot/OEBPS/
-#mv *.svg ./bookroot/OEBPS/
 mv *.png ./bookroot/OEBPS/
 #mv *.jpg ./bookroot/OEBPS/
+#mv *.svg ./bookroot/OEBPS/
 
 echo -n "application/epub+zip" > ./bookroot/mimetype
 
