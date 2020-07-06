@@ -2,15 +2,8 @@
 
 cp $1 ./mybook.pdf
 
-echo -n "Width of your book/pdf in inches (e.g.: 8): "
-#read width
-echo -n "Height of your book/pdf in inches (ex.: 10): "
-#read height
-
-echo -n "Resolution of the images in the epub in dpi (ex.: 300): "
+echo -n "Resolution of the images in the epub in dpi (ex.: 150 or 300): "
 #read dpi
-#echo -n "Format of the images in the epub (png, jpg, svg): "
-#read imgformat
 
 #echo -n "Horizontal resolution of your device/tablet in pixels (the smaller number) (e.g.: 1080): "
 #read hdpi # in pixels, not in dot/pixel per inch! / Should be called hres!
@@ -32,8 +25,17 @@ echo -n "ISBN number: "
 echo -n "dc:subject (e.g.: history): "
 #read tags
 
-width=8
-height=10
+widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
+heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
+
+width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
+height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
+
+widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
+heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
+
+echo -n "Book/PDF Width: $width inches / $widthincm cm"
+echo -n "Book/PDF Height: $height inches / $heightincm cm"
 
 dpi=300
 imgformat="png"
