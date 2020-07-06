@@ -13,8 +13,8 @@ heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
 
 factorratio=$(bc <<< "scale=7; ($heightinpts*1.0)/($widthinpts*1.0)")
 
-hdpi=900
-vdpi=$(bc <<< "scale=0; ($hdpi*$factorratio)/1.0")
+hdpi=900 # Should be named "hres"; in pixels)
+vdpi=$(bc <<< "scale=0; ($hdpi*$factorratio)/1.0") # Should be named "vres"; in pixels)
 
 echo "Book/PDF Width: $width inches / $widthincm cm"
 echo "Book/PDF Height: $height inches / $heightincm cm"
@@ -43,13 +43,13 @@ echo -n "dc:subject (e.g.: history): "
 
 imgformat="png"
 
-title="Test2"
-author="Eric Dodémont"
-publisher="Heta"
-year="2020"
-lang="fr"
-isbn="1234567890"
-tags="history"
+#title="About sciences and more!"
+#author="John Doe"
+#publisher="O'Reilly"
+#year="2020"
+#lang="en"
+#isbn="1234567890"
+#tags="sciences"
 
 echo "Wait..."
 
