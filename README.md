@@ -6,7 +6,12 @@ The original file layout is retained and fonts are embedded.
 
 The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitmap and/or vector images).
 
-Based the bash scripts first written by Robert Clayton (RNCTX) on following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
+Based on the bash scripts first written by Robert Clayton (RNCTX) on following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
+
+Repositories for pdf2htmlEX:
+
+- The original one: https://github.com/coolwanglu/pdf2htmlEX
+- The new one (with updated .deb packages): https://github.com/pdf2htmlEX/pdf2htmlEX
 
 More about fixed layout ePub version 3 specifications (IDPF / W3C):
 
