@@ -27,19 +27,19 @@ echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300): "
 read dpi
 
 echo -n "Title: "
-#read title
+read title
 echo -n "Author: "
-#read author
+read author
 echo -n "Publisher: "
-#read publisher
+read publisher
 echo -n "Publication year: "
-#read year
+read year
 echo -n "Language: (e.g.: fr): "
-#read lang
+read lang
 echo -n "ISBN number: "
-#read isbn
+read isbn
 echo -n "dc:subject (e.g.: history): "
-#read tags
+read tags
 
 imgformat="png"
 
