@@ -2,13 +2,29 @@
 
 cp $1 ./mybook.pdf
 
-echo -n "Resolution of the images in the epub in dpi (ex.: 150 or 300): "
-#read dpi
+widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
+heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
 
-#echo -n "Horizontal resolution of your device/tablet in pixels (the smaller number) (e.g.: 1080): "
-#read hdpi # in pixels, not in dot/pixel per inch! / Should be called hres!
-#echo -n "Vertical resolution of your device/tablet in pixels (the larger number) (e.g.: 1920): "
-#read vdpi # in pixels, not in dot/pixel per inch! / Should be called vres!
+width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
+height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
+
+widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
+heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
+
+factorratio=$(bc <<< "scale=7; ($heightinpts*1.0)/($widthinpts*1.0)")
+
+hdpi=900
+vdpi=$(bc <<< "scale=0; ($hdpi*$factorratio)/1.0")
+
+echo "Book/PDF Width: $width inches / $widthincm cm"
+echo "Book/PDF Height: $height inches / $heightincm cm"
+echo "Factor ratio (Heigth / Width): $factorratio"
+echo "ePub Viewport (Width x Height): $hdpi pixels x $vdpi pixels"
+
+echo "---------------------------------------"
+
+echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300): "
+read dpi
 
 echo -n "Title: "
 #read title
@@ -25,37 +41,7 @@ echo -n "ISBN number: "
 echo -n "dc:subject (e.g.: history): "
 #read tags
 
-widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
-heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
-
-width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
-height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
-
-widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
-heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
-
-echo -n "Book/PDF Width: $width inches / $widthincm cm"
-echo -n "Book/PDF Height: $height inches / $heightincm cm"
-
-dpi=300
 imgformat="png"
-
-#Samsung Galaxy Tab A (W=1080 x H=1920)
-#hdpi=1080
-#vdpi=1920
-
-# viewport = (dpi x width) X (dpi x height) ==> hdpi = dpi * width / vdpi = dpi * height
-#hdpi=300*8=2400
-#vdpi=300*10=3000
-#hdpi=2400
-#vdpi=3000
-
-#hdpi=$(($dpi*$width))
-#vdpi=$(($dpi*$height))
-
-# Ensuite réduire pour "tenir" dans l'écran de la tablette mais en gardant le ratio (height / width du livre/pdf)
-hdpi=900
-vdpi=1125
 
 title="Test2"
 author="Eric Dodémont"
