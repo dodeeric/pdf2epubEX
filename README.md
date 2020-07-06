@@ -1,18 +1,19 @@
 # pdf2epubEX
 
-This script uses the pdf2htmlEX tool to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
+This bash script uses the pdf2htmlEX tool to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
 
 The original file layout is retained and fonts are embedded.
 
 The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitmap and/or vector images).
 
-Based on the bash scripts first written by Robert Clayton (RNCTX) on following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
-
 Usage: ./pdf2epubEX.sh myfile.pdf
 
+The PDF file has to be in the same directory as the script.
 Result will be: myfile.epub
 
-You have to install pdf2htmlEX before using the script.
+Prerequisites: 
+
+You have to install pdf2htmlEX before using the script:
 
 Repositories for pdf2htmlEX:
 
@@ -23,4 +24,6 @@ More about fixed layout ePub version 3 specifications (IDPF / W3C):
 
 - Fixed Layouts: https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts
 - Fixed-Layout Properties: https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl
+
+This script is based on the bash scripts written by Robert Clayton (RNCTX) on abailable on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
