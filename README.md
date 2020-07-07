@@ -26,5 +26,5 @@ More about fixed layout ePub version 3 specifications (IDPF / W3C):
 - Fixed Layouts: https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts
 - Fixed-Layout Properties: https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl
 
-This script is based on the bash scripts written by Robert Clayton (RNCTX) on abailable on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
+This script is based on the bash scripts written by Robert Clayton (RNCTX) and available on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
