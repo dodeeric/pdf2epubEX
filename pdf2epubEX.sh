@@ -18,7 +18,7 @@ vdpi=$(bc <<< "scale=0; ($hdpi*$factorratio)/1.0") # Should be named "vres"; in 
 
 echo "Book/PDF Width: $width inches / $widthincm cm"
 echo "Book/PDF Height: $height inches / $heightincm cm"
-echo "Factor ratio (Heigth / Width): $factorratio"
+echo "Factor ratio (Height / Width): $factorratio"
 echo "ePub Viewport (Width x Height): $hdpi pixels x $vdpi pixels"
 
 echo "---------------------------------------"
