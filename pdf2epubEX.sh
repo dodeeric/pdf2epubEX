@@ -41,19 +41,19 @@ read isbn
 echo -n "dc:subject (e.g.: history): "
 read tags
 
-title="About sciences and more!"
-author="John Doe"
-publisher="O'Reilly"
-year="2020"
-lang="en"
-isbn="1234567890"
-tags="sciences"
+#title="About sciences and more!"
+#author="John Doe"
+#publisher="O'Reilly"
+#year="2020"
+#lang="en"
+#isbn="1234567890"
+#tags="sciences"
 
 imgformat="png"
 
 echo "Wait..."
 
-pdf2htmlEX -f 1 -l 30 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hdpi --fit-height $vdpi --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hdpi --fit-height $vdpi --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
 # Update the top and bottom of each page file
 
