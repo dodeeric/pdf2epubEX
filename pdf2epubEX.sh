@@ -13,18 +13,24 @@ heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
 
 factorratio=$(bc <<< "scale=7; ($heightinpts*1.0)/($widthinpts*1.0)")
 
-hdpi=900 # Should be named "hres"; in pixels
-vdpi=$(bc <<< "scale=0; ($hdpi*$factorratio)/1.0") # Should be named "vres"; in pixels
+hres=900 # Horizontal resolution in pixels
+vres=$(bc <<< "scale=0; ($hres*$factorratio)/1.0") # Vertical resolution in pixels
 
 echo "Book/PDF Width: $width inches / $widthincm cm"
 echo "Book/PDF Height: $height inches / $heightincm cm"
 echo "Factor ratio (Height / Width): $factorratio"
-echo "ePub Viewport (Width x Height): $hdpi pixels x $vdpi pixels"
+echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
 
 echo "---------------------------------------"
 
 echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300): "
 read dpi
+
+echo -n "Format of the images in the epub (png or jpg): "
+read imgformat
+
+#echo -n "Compression / Quality of the images in the epub if jpg format has been chosen (between 1 and 100): "
+#read compression
 
 echo -n "Title: "
 read title
@@ -32,33 +38,33 @@ echo -n "Author: "
 read author
 echo -n "Publisher: "
 read publisher
-echo -n "Publication year: "
+echo -n "Year: "
 read year
 echo -n "Language: (e.g.: fr): "
-read lang
+read language
 echo -n "ISBN number: "
 read isbn
-echo -n "dc:subject (e.g.: history): "
+echo -n "Subject (e.g.: history): "
 read tags
 
-#title="About sciences and more!"
-#author="John Doe"
-#publisher="O'Reilly"
-#year="2020"
-#lang="en"
-#isbn="1234567890"
-#tags="sciences"
+title="About sciences and more!"
+author="John Doe"
+publisher="O'Reilly"
+year="2020"
+language="en"
+isbn="1234567890"
+tags="sciences"
 
-imgformat="png"
+#imgformat="png"
 
 echo "Wait..."
 
-pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hdpi --fit-height $vdpi --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+pdf2htmlEX -f 1 -l 50 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
 # Update the top and bottom of each page file
 
 for f in *.page; do
-echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"UTF-8\"/>\n  <meta name=\"generator\" content=\"pdf2htmlEX\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"base.min.css\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"mybook.css\"/>\n  <meta name=\"viewport\" content=\"width=$hdpi, height=$vdpi\"/>\n  <title>$title</title>\n</head>\n<body>\n<div id=\"page-container\">" >> tmpfile
+echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"UTF-8\"/>\n  <meta name=\"generator\" content=\"pdf2htmlEX\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"base.min.css\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"mybook.css\"/>\n  <meta name=\"viewport\" content=\"width=$hres, height=$vres\"/>\n  <title>$title</title>\n</head>\n<body>\n<div id=\"page-container\">" >> tmpfile
 cat "$f" >> tmpfile
 echo -e "</div>\n</body>\n</html>" >> tmpfile
 mv tmpfile "$f"
@@ -87,6 +93,7 @@ mv *.css ./bookroot/OEBPS/
 mv *.woff ./bookroot/OEBPS/
 mv *.xhtml ./bookroot/OEBPS/
 mv *.png ./bookroot/OEBPS/
+mv *.jpg ./bookroot/OEBPS/
 
 echo -n "application/epub+zip" > ./bookroot/mimetype
 
@@ -113,9 +120,11 @@ echo -e "  </ol>\n </nav>\n</body>\n</html>" >> ../../nav
 
 cd ../../
 
+# manisfest
+
 date=$(date +%Y-%m-%dT%H:%M:%SZ)
 
-echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$lang</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:description>$tags</dc:description>\n    <meta content=\"cover-image\" name=\"cover\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
+echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$language</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:description>$tags</dc:description>\n    <meta content=\"cover-image\" name=\"cover\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
 
 cd ./bookroot/OEBPS/
 
@@ -126,7 +135,7 @@ ff=`basename "$f" .xhtml`
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"application/xhtml+xml\"/>" >> ./content.opf
 done
 
-# 2) images (PNG)
+# 2) images
 
 mv cover.png cover.xxx
 
@@ -136,6 +145,11 @@ echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/png\"/>" >> ./conte
 done
 
 mv cover.xxx cover.png
+
+for f in *.jpg; do
+ff=`basename "$f" .jpg`
+echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/jpg\"/>" >> ./content.opf
+done
 
 # 3) fonts
 
@@ -162,7 +176,10 @@ sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 
 cd ../
 
-zip -0Xq ./$1.epub mimetype && zip -Xr9Dq ./$1.epub * -x mimetype -x ./$1.epub && mv ./$1.epub ../$1.epub
+epubfilename=`basename "$1" .pdf`
+epubfilename=$(echo "$epubfilename-$dpi-$imgformat")
+
+zip -0Xq ./$epubfilename.epub mimetype && zip -Xr9Dq ./$epubfilename.epub * -x mimetype -x ./$epubfilename.epub && mv ./$epubfilename.epub ../$epubfilename.epub
 
 echo "Done"
 
