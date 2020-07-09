@@ -52,7 +52,7 @@ echo -n "Language: (e.g.: fr): " ; read language
 echo -n "ISBN number: " ; read isbn
 echo -n "Subject (e.g.: history): " ; read tags
 
-title="About sciences and more!"
+title="PDF2ePub: $dpi dpi / $imgformat"
 author="John Doe"
 publisher="O'Reilly"
 year="2020"
@@ -62,7 +62,7 @@ tags="sciences"
 
 echo "Wait..."
 
-pdf2htmlEX -f 1 -l 25 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+pdf2htmlEX -f 1 -l 75 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
 # Update the top and bottom of each page file
 
@@ -109,13 +109,12 @@ echo -n "application/epub+zip" > ./bookroot/mimetype
 
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">\n  <rootfiles>\n    <rootfile full-path=\"OEBPS/content.opf\" media-type=\"application/oebps-package+xml\"/>\n  </rootfiles>\n</container>" > bookroot/META-INF/container.xml
 
-# Create the cover: PDF first page --> cover.png
+# Create the cover: PDF first page (text + images) --> cover.png
 
-pdfimages -png -f 3 -l 3 mybook.pdf cover
-mv cover-000.png ./bookroot/OEBPS/cover.png
-rm -f *.png
+pdftoppm mybook.pdf cover -png -f 1 -r $dpi -singlefile
+mv cover.png ./bookroot/OEBPS/
 
-# nav file
+# Create the nav.xhtm file (TOC)
 
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns:epub=\"http://www.idpf.org/2007/ops\"\n   xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n <title>$title</title>\n</head>\n<body>\n <nav epub:type=\"toc\" id=\"toc\">\n  <ol>\n    <li>\n     <a href=\"mybook0001.xhtml\">Chapter 1 Like This</a>\n    </li>\n    <li>\n     <a href=\"mybook0002.xhtml\">Chapter 2 Like This</a>\n    </li>\n  </ol>\n</nav>\n <nav epub:type=\"landmarks\">\n  <ol>\n   <li>\n     <a epub:type=\"frontmatter\" href=\"mybook0001.xhtml\">Cover</a>\n   </li>\n   <li>\n    <a epub:type=\"bodymatter\" href=\"mybook0002.xhtml\">Bodymatter</a>\n   </li>\n  </ol>\n </nav>\n <nav epub:type=\"page-list\" hidden=\"\">\n  <ol>" > ./nav
 
@@ -130,7 +129,7 @@ echo -e "  </ol>\n </nav>\n</body>\n</html>" >> ../../nav
 
 cd ../../
 
-# manisfest
+# Generate the manisfest
 
 date=$(date +%Y-%m-%dT%H:%M:%SZ)
 
