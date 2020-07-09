@@ -23,29 +23,34 @@ echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
 
 echo "---------------------------------------"
 
-echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300): "
-read dpi
+echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " ; read dpi
 
-echo -n "Format of the images in the epub (png or jpg): "
-read imgformat
+if [ -z $dpi ] ; then
+  dpi=150
+fi 
+  
+re='^[0-9]+$'
+if ! [[ $dpi =~ $re ]] ; then
+  echo "Error: image resolution incorrect." >&2 ; exit 1
+fi
 
-#echo -n "Compression / Quality of the images in the epub if jpg format has been chosen (between 1 and 100): "
-#read compression
+echo -n "Format of the images in the epub (png or jpg) [default: jpg]: " ; read imgformat
 
-echo -n "Title: "
-read title
-echo -n "Author: "
-read author
-echo -n "Publisher: "
-read publisher
-echo -n "Year: "
-read year
-echo -n "Language: (e.g.: fr): "
-read language
-echo -n "ISBN number: "
-read isbn
-echo -n "Subject (e.g.: history): "
-read tags
+if [ -z $imgformat ] ; then
+  imgformat="jpg"
+fi 
+
+if [ $imgformat != "png" ] && [ $imgformat != "jpg" ] ; then
+  echo "Error: image format incorrect." ; exit 1
+fi 
+
+echo -n "Title: " ; read title
+echo -n "Author: " ; read author
+echo -n "Publisher: " ; read publisher
+echo -n "Year: " ; read year
+echo -n "Language: (e.g.: fr): " ; read language
+echo -n "ISBN number: " ; read isbn
+echo -n "Subject (e.g.: history): " ; read tags
 
 title="About sciences and more!"
 author="John Doe"
@@ -55,19 +60,20 @@ language="en"
 isbn="1234567890"
 tags="sciences"
 
-#imgformat="png"
-
 echo "Wait..."
 
-pdf2htmlEX -f 1 -l 50 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+pdf2htmlEX -f 1 -l 25 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
 # Update the top and bottom of each page file
 
-for f in *.page; do
+for f in *.page
+do
+
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"UTF-8\"/>\n  <meta name=\"generator\" content=\"pdf2htmlEX\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"base.min.css\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"mybook.css\"/>\n  <meta name=\"viewport\" content=\"width=$hres, height=$vres\"/>\n  <title>$title</title>\n</head>\n<body>\n<div id=\"page-container\">" >> tmpfile
 cat "$f" >> tmpfile
 echo -e "</div>\n</body>\n</html>" >> tmpfile
 mv tmpfile "$f"
+
 done
 
 # Rename each page file
@@ -92,8 +98,12 @@ mkdir ./bookroot/OEBPS/
 mv *.css ./bookroot/OEBPS/
 mv *.woff ./bookroot/OEBPS/
 mv *.xhtml ./bookroot/OEBPS/
-mv *.png ./bookroot/OEBPS/
-mv *.jpg ./bookroot/OEBPS/
+
+if [ $imgformat == "png" ] ; then
+  mv *.png ./bookroot/OEBPS/
+else
+  mv *.jpg ./bookroot/OEBPS/
+fi
 
 echo -n "application/epub+zip" > ./bookroot/mimetype
 
@@ -137,19 +147,23 @@ done
 
 # 2) images
 
-mv cover.png cover.xxx
+if [ $imgformat == "png" ] ; then
 
+mv cover.png cover.xxx
 for f in *.png; do
 ff=`basename "$f" .png`
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/png\"/>" >> ./content.opf
 done
-
 mv cover.xxx cover.png
+
+else
 
 for f in *.jpg; do
 ff=`basename "$f" .jpg`
-echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/jpg\"/>" >> ./content.opf
+echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/jpeg\"/>" >> ./content.opf
 done
+
+fi
 
 # 3) fonts
 
@@ -177,7 +191,7 @@ sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 cd ../
 
 epubfilename=`basename "$1" .pdf`
-epubfilename=$(echo "$epubfilename-$dpi-$imgformat")
+epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
 
 zip -0Xq ./$epubfilename.epub mimetype && zip -Xr9Dq ./$epubfilename.epub * -x mimetype -x ./$epubfilename.epub && mv ./$epubfilename.epub ../$epubfilename.epub
 
@@ -191,4 +205,4 @@ rm -f ./metadata
 rm -f ./mybook.pdf
 rm -rf ./bookroot
 
-exit 0;
+exit 0
