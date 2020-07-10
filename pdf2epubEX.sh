@@ -43,7 +43,7 @@ fi
   
 re='^[0-9]+$'
 if ! [[ $dpi =~ $re ]] ; then
-  echo "Error: image resolution incorrect." >&2 ; exit 1
+  echo "Error: image resolution incorrect." ; exit 1
 fi
 
 echo -n "Format of the images in the epub (png or jpg) [default: jpg]: " ; read imgformat
@@ -80,8 +80,7 @@ pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --e
 
 # Update the top and bottom of each page file
 
-for f in *.page
-do
+for f in *.page ; do
 
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<html xmlns:epub=\"http://www.idpf.org/2007/ops\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"UTF-8\"/>\n  <meta name=\"generator\" content=\"pdf2htmlEX\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"base.min.css\"/>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"mybook.css\"/>\n  <meta name=\"viewport\" content=\"width=$hres, height=$vres\"/>\n  <title>$title</title>\n</head>\n<body>\n<div id=\"page-container\">" >> tmpfile
 cat "$f" >> tmpfile
