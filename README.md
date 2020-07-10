@@ -28,3 +28,12 @@ More about fixed layout ePub version 3 specifications (IDPF / W3C):
 
 This script is based on the bash scripts written by Robert Clayton (RNCTX) and available on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
+Docker:
+
+A Docker image is also available on Dockerhub: https://hub.docker.com/repository/docker/dodeeric/pdf2epubex.
+
+Usage:
+
+To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
+
+$ docker run -ti --rm -v pwd:/pdf dodeeric/pdf2epubex:1.0.1 pdf2htmlEX myfile.pdf
