@@ -37,5 +37,5 @@ Usage:
 To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
 
 ```
-$ docker run -ti --rm -v pwd:/pdf dodeeric/pdf2epubex:1.0.1 pdf2htmlEX myfile.pdf
+$ docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex:1.0.1 pdf2htmlEX myfile.pdf
 ```
