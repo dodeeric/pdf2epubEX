@@ -28,12 +28,14 @@ factorratio=$(bc <<< "scale=7; ($heightinpts*1.0)/($widthinpts*1.0)")
 hres=900 # Horizontal resolution in pixels
 vres=$(bc <<< "scale=0; ($hres*$factorratio)/1.0") # Vertical resolution in pixels
 
+echo "---------------------------------------------------------------------------"
 echo "Book/PDF Width: $width inches / $widthincm cm"
 echo "Book/PDF Height: $height inches / $heightincm cm"
 echo "Factor ratio (Height / Width): $factorratio"
 echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
+echo "---------------------------------------------------------------------------"
 
-echo "---------------------------------------"
+echo "If you want, you can hit <ENTER> to all the next questions."
 
 echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " ; read dpi
 
@@ -64,13 +66,33 @@ echo -n "Language: (e.g.: fr): " ; read language
 echo -n "ISBN number: " ; read isbn
 echo -n "Subject (e.g.: history): " ; read tags
 
-#title="PDF2ePub: $dpi dpi / $imgformat"
-#author="John Doe"
-#publisher="O'Reilly"
-#year="2020"
-#language="en"
-#isbn="1234567890"
-#tags="sciences"
+if [ -z $title ] ; then
+  title="None"
+fi 
+
+if [ -z $author ] ; then
+  author="None"
+fi 
+
+if [ -z $publisher ] ; then
+  publisher="None"
+fi 
+
+if [ -z $year ] ; then
+  year="None"
+fi 
+
+if [ -z $language ] ; then
+  language="None"
+fi 
+
+if [ -z $isbn ] ; then
+  isbn="None"
+fi 
+
+if [ -z $tags ] ; then
+  tags="None"
+fi 
 
 echo "Wait..."
 
