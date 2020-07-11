@@ -45,15 +45,19 @@ Result will be: myfile.epub
 
 ## Additional information
 
+To read a fix layout epub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
+
+A lot of epub reader apps exist (reading reflowable text epub or fixed layout epub): Play Books (from Google), BookShelf, PocketBook, Books (from Apple; only on iOS; formely known as iBooks), etc. Kindle (from Amazon) does not support the standard epub format (they have their own format which is based on the epub format).
+ 
+More about fixed layout ePub (FXL) version 3 specifications (IDPF / W3C):
+
+- Fixed Layouts: https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts
+- Fixed-Layout Properties: https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl
+
 Repositories for pdf2htmlEX:
 
 - The original one: https://github.com/coolwanglu/pdf2htmlEX
 - The new one (with updated .deb packages): https://github.com/pdf2htmlEX/pdf2htmlEX
-
-More about fixed layout ePub version 3 specifications (IDPF / W3C):
-
-- Fixed Layouts: https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts
-- Fixed-Layout Properties: https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl
 
 This script is based on the bash scripts written by Robert Clayton (RNCTX) and available on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
