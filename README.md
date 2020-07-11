@@ -27,7 +27,7 @@ apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
 apt-get install poppler-utils bc zip
 ```
 
-The Debian package is available in this repository.
+The Debian package (.deb) is available in this repository.
 
 ## Using the Docker image
 
