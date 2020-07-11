@@ -31,7 +31,7 @@ The Debian package is available in this repository.
 
 ## Using the Docker image
 
-A Docker image is also available on Dockerhub: https://hub.docker.com/repository/docker/dodeeric/pdf2epubex.
+A Docker image is vailable on Dockerhub: https://hub.docker.com/repository/docker/dodeeric/pdf2epubex.
 
 Usage:
 
@@ -45,11 +45,15 @@ Result will be: myfile.epub
 
 ## Additional information
 
-To read a fix layout epub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
+To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
 
-A lot of epub reader apps exist (reading reflowable text epub or fixed layout epub): Play Books (from Google), BookShelf, PocketBook, Books (from Apple; only on iOS; formely known as iBooks), etc. Kindle (from Amazon) does not support the standard epub format (they have their own format which is based on the epub format).
+A lot of ePub reader apps exist (reading reflowable text ePub or fixed layout ePub): Google Play Books, BookShelf, PocketBook, Apple Books (only on iOS; formely known as Apple iBooks), etc. 
+
+Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
+
+To use Google Play Books, you have to go to "Settings", then set "Enable uploading (from downloads, mail or other apps)". The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the Google Play Books web interface: https://play.google.com/books (see the "Upload files" button on the top right corner).
  
-More about fixed layout ePub (FXL) version 3 specifications (IDPF / W3C):
+More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C):
 
 - Fixed Layouts: https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts
 - Fixed-Layout Properties: https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl
