@@ -43,6 +43,10 @@ docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 
 Result will be: myfile.epub
 
+Prerequisites:
+
+You need to install Docker which is available for all computer OS: Windows, MacOS, Linux and Unix. See here: https://docs.docker.com/engine/install.
+
 ## Additional information
 
 To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
