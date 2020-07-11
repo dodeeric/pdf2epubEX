@@ -41,7 +41,23 @@ To convert myfile.pdf to myfile.epub, run the following command in the directory
 docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
-Result will be: myfile.epub
+The result will be: myfile.epub
+
+You can also use pdf2htmlEX with this same Docker image:
+
+To convert myfile.pdf to myfile.html, run the following command in the directory where the PDF file is located:
+
+```
+docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
+```
+
+The result will be: myfile.html
+
+pdf2htmlEX has a lot of parameters. To see them:
+
+```
+docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2htmlEX --help
+```
 
 Prerequisites:
 
