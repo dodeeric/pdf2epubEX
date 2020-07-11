@@ -4,17 +4,46 @@ This bash script uses the pdf2htmlEX tool to convert a PDF file (myfile.pdf) to 
 
 The layout is retained and all the fonts are embedded.
 
-The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitmap and/or vector images).
+The pdf2htmlEX tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
 
-Usage: ./pdf2epubEX.sh myfile.pdf
+## Using the bash script
 
-The PDF file has to be in the same directory as the script.
+Usage:
+
+To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
+
+```
+./pdf2epubEX.sh myfile.pdf
+```
 
 Result will be: myfile.epub
 
 Prerequisites: 
 
-You have to install pdf2htmlEX before using the script:
+You have to install pdf2htmlEX and some other utilities before using the script:
+
+```
+apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
+apt-get install poppler-utils bc zip
+```
+
+The Debian package is available in this repository.
+
+## Using the Docker image
+
+A Docker image is also available on Dockerhub: https://hub.docker.com/repository/docker/dodeeric/pdf2epubex.
+
+Usage:
+
+To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
+
+```
+docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX myfile.pdf
+```
+
+Result will be: myfile.epub
+
+## Additional information
 
 Repositories for pdf2htmlEX:
 
@@ -28,14 +57,3 @@ More about fixed layout ePub version 3 specifications (IDPF / W3C):
 
 This script is based on the bash scripts written by Robert Clayton (RNCTX) and available on the following GIT repository: https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED.
 
-Docker:
-
-A Docker image is also available on Dockerhub: https://hub.docker.com/repository/docker/dodeeric/pdf2epubex.
-
-Usage:
-
-To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
-
-```
-docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX myfile.pdf
-```
