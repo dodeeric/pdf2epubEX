@@ -39,22 +39,22 @@ echo "If you want, you can hit <ENTER> to all the next questions."
 
 echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " ; read dpi
 
-if [ -z $dpi ] ; then
+if [ -z "$dpi" ] ; then
   dpi=150
 fi 
   
 re='^[0-9]+$'
-if ! [[ $dpi =~ $re ]] ; then
+if ! [[ "$dpi" =~ $re ]] ; then
   echo "Error: image resolution incorrect." ; exit 1
 fi
 
 echo -n "Format of the images in the epub (png or jpg) [default: jpg]: " ; read imgformat
 
-if [ -z $imgformat ] ; then
+if [ -z "$imgformat" ] ; then
   imgformat="jpg"
 fi 
 
-if [ $imgformat != "png" ] && [ $imgformat != "jpg" ] ; then
+if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] ; then
   echo "Error: image format incorrect." ; exit 1
 fi 
 
@@ -66,31 +66,31 @@ echo -n "Language: (e.g.: fr): " ; read language
 echo -n "ISBN number: " ; read isbn
 echo -n "Subject (e.g.: history): " ; read tags
 
-if [ -z $title ] ; then
+if [ -z "$title" ] ; then
   title="None"
 fi 
 
-if [ -z $author ] ; then
+if [ -z "$author" ] ; then
   author="None"
 fi 
 
-if [ -z $publisher ] ; then
+if [ -z "$publisher" ] ; then
   publisher="None"
 fi 
 
-if [ -z $year ] ; then
+if [ -z "$year" ] ; then
   year="None"
 fi 
 
-if [ -z $language ] ; then
+if [ -z "$language" ] ; then
   language="None"
 fi 
 
-if [ -z $isbn ] ; then
+if [ -z "$isbn" ] ; then
   isbn="None"
 fi 
 
-if [ -z $tags ] ; then
+if [ -z "$tags" ] ; then
   tags="None"
 fi 
 
