@@ -146,7 +146,7 @@ echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<container version=\"1.0\" 
 
 # Create the cover: PDF first page (text + images) --> cover.png
 
-pdftoppm mybook.pdf cover -png -f 1 -r $dpi -singlefile
+pdftoppm mybook.pdf cover -cropbox -png -f 1 -r $dpi -singlefile
 mv cover.png ./bookroot/OEBPS/
 
 # Create the nav.xhtm file (TOC)
