@@ -31,7 +31,7 @@ The Debian package (.deb) is available in this repository.
 
 ## Using the Docker image
 
-A Docker image is vailable on my DockerHub [repository] (https://hub.docker.com/repository/docker/dodeeric/pdf2epubex).
+A Docker image is vailable on [my DockerHub repository] (https://play.google.com/store/books/details?id=LRQ-BQAAQBAJ).
 
 ### Usage
 
