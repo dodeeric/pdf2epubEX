@@ -8,7 +8,7 @@ The pdf2htmlEX tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bit
 
 ## Using the bash script
 
-#### Usage
+### Usage
 
 To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
 
