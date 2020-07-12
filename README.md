@@ -63,6 +63,18 @@ Prerequisites:
 
 You need to install Docker which is available for all computer OS: Windows, MacOS, Linux and Unix. See here: https://docs.docker.com/engine/install.
 
+## Parameters
+
+Once you launch pdf2epubEX, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
+
+- Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]
+- Format of the images in the epub (png or jpg) [default: jpg]
+- Title, Author, Publisher, Year, Language: (e.g.: fr), ISBN number, Subject (e.g.: history)
+
+If you want, you can hit <ENTER> to all the questions.
+
+The ePub cover image will be made from the first page of the PDF file.
+
 ## Additional information
 
 To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
