@@ -31,7 +31,7 @@ The Debian package (.deb) is available in this repository.
 
 ## Using the Docker image
 
-A Docker image is vailable on [my DockerHub repository] (https://play.google.com/store/books/details?id=LRQ-BQAAQBAJ).
+A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/repository/docker/dodeeric/pdf2epubex).
 
 ### Usage
 
@@ -79,7 +79,7 @@ The ePub cover image will be made from the first page of the PDF file.
 
 ### Book
 
-The script is based on the method described in my book published in 2014: **Fixed Layout ePub: A Practical Guide to Publish eBooks from PDF Files**, available on [Amazon] (https://www.amazon.fr/dp/1502809508) and on [Googgle Play Books] (https://play.google.com/store/books/details?id=LRQ-BQAAQBAJ).
+The script is based on the method described in my book published in 2014: **Fixed Layout ePub: A Practical Guide to Publish eBooks from PDF Files**, available on [Amazon](https://www.amazon.fr/dp/1502809508) and on [Googgle Play Books](https://play.google.com/store/books/details?id=LRQ-BQAAQBAJ).
 
 ### ePub Fix Layout
 
