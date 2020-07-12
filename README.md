@@ -71,7 +71,7 @@ Once you launch pdf2epubEX, some information will be displayed like the book/PDF
 - Format of the images in the epub (png or jpg) [default: jpg]
 - Title, Author, Publisher, Year, Language: (e.g.: fr), ISBN number, Subject (e.g.: history)
 
-If you want, you can hit <ENTER> to all the questions.
+If you want, you can hit ENTER to all the questions.
 
 The ePub cover image will be made from the first page of the PDF file.
 
