@@ -77,9 +77,15 @@ The ePub cover image will be made from the first page of the PDF file.
 
 ## Examples
 
-In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg); that's what the *pdf2epubEX* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is refered as "web site in a box".
+In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg); that's in fact what basicaly the *pdf2epubEX* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
-**CEB 2015 - Solides et Figures** (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.pdf) [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.html) [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.epub)
+For eBooks with a lot of bitmap images, it is better to chose JPG (compression with loss) to not have a file too big. For eBooks with mainly vector images, it is better to chose PNG (lossless compression).
+
+**Install your own OpenStack Cloud**, Eric Dodémont, 2012, 49 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) | [HTLM](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.epub)
+
+**CEB 2015 - Solides et Figures**, 2015, 24 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.epub)
+
+**La dynastie belge en images : Anciennes gravures du XIXe siècle (Preview)**, Eric Dodémont, 2015, 248 pp. (150 dpi / JPG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.pdf) | [HTLM](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.epub)
 
 ## Additional information
 
