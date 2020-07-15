@@ -1,12 +1,12 @@
 # pdf2epubEX
 
-This bash script uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
+This Bash script uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
 
 The result is a *fixed layout* ePub: the layout is perfectly retained and all the fonts are embedded.
 
 The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images). This means that the pages are not just converted into images as a lot of converters are doing.
 
-## Using the bash script
+## Using the Bash script
 
 ### Usage
 
@@ -20,7 +20,8 @@ Result will be: myfile.epub
 
 ### Prerequisites
 
-You have to install *pdf2htmlEX* and some other utilities before using the script:
+- Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
+- Install *pdf2htmlEX* and some other utilities: poppler-utils, bc and zip. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
 
 ```
 apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
@@ -28,6 +29,12 @@ apt-get install poppler-utils bc zip
 ```
 
 The Debian package (.deb) is available in this repository.
+
+If you install *Git*, you can also just do:
+
+```
+git clone https://github.com/dodeeric/pdf2epubEX.git
+```
 
 ## Using the Docker image
 
@@ -107,5 +114,4 @@ More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed
 
 Repositories for *pdf2htmlEX*: the [original one](https://github.com/coolwanglu/pdf2htmlEX) and the [new one](https://github.com/pdf2htmlEX/pdf2htmlEX) (with updated .deb packages).
 
-This script is based on the bash scripts written by Robert Clayton (RNCTX) and available in [his Git repository](https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED).
-
+This script is based on the Bash scripts written by Robert Clayton (RNCTX) and available in [his Git repository](https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED).
