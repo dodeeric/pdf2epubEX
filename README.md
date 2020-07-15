@@ -1,10 +1,10 @@
 # pdf2epubEX
 
-This bash script uses the *pdf2htmlEX* tool to convert a PDF file to a ePub file.
+This bash script uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
 
-The result is a *fixed layout* ePub: the layout is retained and all the fonts are embedded.
+The result is a *fixed layout* ePub: the layout is perfectly retained and all the fonts are embedded.
 
-The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
+The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images). This means that the pages are not just converted into images as a lot of converters are doing.
 
 ## Using the bash script
 
@@ -77,7 +77,7 @@ The ePub cover image will be made from the first page of the PDF file.
 
 ## Examples
 
-In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg); that's in fact what basicaly the *pdf2epubEX* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
+In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
 For eBooks with a lot of bitmap images, it is better to chose JPG (compression with loss) to not have a file too big. For eBooks with mainly vector images, it is better to chose PNG (lossless compression).
 
@@ -95,7 +95,7 @@ The script is based on the method described in my book published in 2014: *Fixed
 
 To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
 
-A lot of ePub reader apps exist (to reflowable text ePub and fixed layout ePub): Google Play Books, BookShelf, PocketBook, Apple Books (only on iOS; formely known as Apple iBooks), etc. 
+A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout ePub): Google Play Books, BookShelf, PocketBook, Apple Books (only on iOS; formely known as Apple iBooks), etc. 
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
 
@@ -107,5 +107,5 @@ More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed
 
 Repositories for *pdf2htmlEX*: the [original one](https://github.com/coolwanglu/pdf2htmlEX) and the [new one](https://github.com/pdf2htmlEX/pdf2htmlEX) (with updated .deb packages).
 
-This script is based on the bash scripts written by Robert Clayton (RNCTX) and available [his Git repository](https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED).
+This script is based on the bash scripts written by Robert Clayton (RNCTX) and available in [his Git repository](https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED).
 
