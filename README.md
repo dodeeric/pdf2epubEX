@@ -108,7 +108,7 @@ Amazon Kindle does not support the standard ePub format (they have their own for
 
 To use Google Play Books, you have to go to **Settings**, then set **Enable uploading (from downloads, mail or other apps)**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner).
  
-More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed Layouts](https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts) and [Fixed-Layout Properties](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl).
+More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed Layouts (EPUB Content Documents 3.2)](https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts) and [Fixed-Layout Properties (EPUB Packages 3.2)](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl).
 
 ### Other Git Repositories
 
