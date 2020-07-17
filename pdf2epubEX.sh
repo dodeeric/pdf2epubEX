@@ -12,6 +12,19 @@
 # Result will be: myfile.epub
 # Prerequisites: You have to install pdf2htmlEX before using the script.
 
+if [ -z "$1" ] ; then
+  echo "Error: no PDF file specified." ; exit 1
+fi
+
+if ! test -f "$1"; then
+  echo "Error: file does not exist." ; exit 1 
+fi
+
+testfile=$(file $1 | grep "PDF document")
+if [ -z "$testfile" ] ; then
+  echo "Error: the file is not a PDF file" ; exit 1
+fi
+
 cp $1 ./mybook.pdf
 
 widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
@@ -35,16 +48,19 @@ echo "Factor ratio (Height / Width): $factorratio"
 echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
 echo "---------------------------------------------------------------------------"
 
-echo -n "Do you want to see more info on the PDF file? (y or n) [default: n]: " ; read moreinfo
+echo -n "Do you want to see more information on the PDF file? (y or n) [default: n]: " ; read moreinfo
 
-if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ $moreinfo == "yes" ] || [ $moreinfo == "Yes" ] ; then
+if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ "$moreinfo" == "yes" ] || [ "$moreinfo" == "Yes" ] ; then
   echo "---------------------------------------------------------------------------"
-  echo "********** PDF Info **********"
+  echo "********** PDF Information **********"
   pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
   echo "********** PDF Fonts **********"
   pdffonts $1
   echo "---------------------------------------------------------------------------"
 fi 
+
+pdftitle=$(pdfinfo $1 2>/dev/null | grep "Title:" | cut -d " " -f11-50)
+pdfauthor=$(pdfinfo $1 2>/dev/null | grep "Author:" | cut -d " " -f10-50)
 
 echo "If you want, you can hit <ENTER> to all the next questions."
 
@@ -69,20 +85,38 @@ if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] ; then
   echo "Error: image format incorrect." ; exit 1
 fi 
 
-echo -n "Title: " ; read title
-echo -n "Author: " ; read author
+if [ -z "$pdftitle" ] ; then
+  echo -n "Title [default: None]: " ; read title
+else
+  echo -n "Title [default: $pdftitle]: " ; read title
+fi
+
+if [ -z "$pdfauthor" ] ; then
+  echo -n "Author [Default: None]: " ; read author
+else
+  echo -n "Author [Default: $pdfauthor]: " ; read author
+fi
+
 echo -n "Publisher: " ; read publisher
 echo -n "Year: " ; read year
 echo -n "Language: (e.g.: fr): " ; read language
 echo -n "ISBN number: " ; read isbn
 echo -n "Subject (e.g.: history): " ; read tags
 
-if [ -z "$title" ] ; then
+if [ -z "$title" ] && [ -z "$pdftitle" ] ; then
   title="None"
+else
+  if [ -z "$title" ]; then
+    title="$pdftitle"
+  fi
 fi 
 
-if [ -z "$author" ] ; then
+if [ -z "$author" ] && [ -z "$pdfauthor" ] ; then
   author="None"
+else
+  if [ -z "$author" ]; then
+    author="$pdfauthor"
+  fi
 fi 
 
 if [ -z "$publisher" ] ; then
