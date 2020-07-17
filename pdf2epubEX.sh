@@ -35,6 +35,17 @@ echo "Factor ratio (Height / Width): $factorratio"
 echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
 echo "---------------------------------------------------------------------------"
 
+echo -n "Do you want to see more info on the PDF file? (y or n) [default: n]: " ; read moreinfo
+
+if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ $moreinfo == "yes" ] || [ $moreinfo == "Yes" ] ; then
+  echo "---------------------------------------------------------------------------"
+  echo "********** PDF Info **********"
+  pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
+  echo "********** PDF Fonts **********"
+  pdffonts $1
+  echo "---------------------------------------------------------------------------"
+fi 
+
 echo "If you want, you can hit <ENTER> to all the next questions."
 
 echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " ; read dpi
