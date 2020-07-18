@@ -1,22 +1,19 @@
 #!/bin/bash
 
-# Bash script to convert a PDF file to a fixed layout ePub file.
-# By Eric Dodémont (eric.dodemont@skynet.be)
-# Belgium, July 2020
-#
-# This bash script uses the pdf2htmlEX tool to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
-# The layout is retained and all the fonts are embedded.
-# The pdf2htmlEX tool converts a PDF file into HTML (with CSS, JS, fonts, and bitmap and/or vector images).
+# Bash script to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
+# By Eric Dodémont (eric.dodemont@skynet.be), Belgium, July 2020.
+# The script uses the pdf2htmlEX tool to convert a PDF file to an ePub file.
+# The result is a fixed layout ePub: the layout is perfectly retained and all the fonts are embedded.
+# The pdf2htmlEX tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
+# This means that the pages are not just converted into images as a lot of converters are doing.
 # Usage: ./pdf2epubEX.sh myfile.pdf
-# The PDF file has to be in the same directory as the script.
-# Result will be: myfile.epub
-# Prerequisites: You have to install pdf2htmlEX before using the script.
+# Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc and zip.
 
 if [ -z "$1" ] ; then
   echo "Error: no PDF file specified." ; exit 1
 fi
 
-if ! test -f "$1"; then
+if ! test -f "$1" ; then
   echo "Error: file does not exist." ; exit 1 
 fi
 
@@ -36,15 +33,23 @@ height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
 widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
 heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
 
-factorratio=$(bc <<< "scale=7; ($heightinpts*1.0)/($widthinpts*1.0)")
+factorratio=$(bc <<< "scale=9; $heightinpts/$widthinpts")
 
 hres=900 # Horizontal resolution in pixels
-vres=$(bc <<< "scale=0; ($hres*$factorratio)/1.0") # Vertical resolution in pixels
+vres=$(bc <<< "scale=0; $hres*$factorratio/1.0") # Vertical resolution in pixels
+
+widthrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $width)
+widthincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $widthincm)
+
+heightrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $height)
+heightincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $heightincm)
+
+factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
 
 echo "---------------------------------------------------------------------------"
-echo "Book/PDF Width: $width inches / $widthincm cm"
-echo "Book/PDF Height: $height inches / $heightincm cm"
-echo "Factor ratio (Height / Width): $factorratio"
+echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
+echo "Book/PDF Height: $heightrounded inches / $heightincmrounded cm"
+echo "Factor ratio (Height / Width): $factorratiorounded"
 echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
 echo "---------------------------------------------------------------------------"
 
@@ -141,9 +146,9 @@ fi
 
 echo "Wait..."
 
-pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+# pdf2htmlEX: the parameter --dpi and --fit-width/fit-height are totaly independant.
 
-#pdf2htmlEX -f 1 -l 75 --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
 # Update the top and bottom of each page file
 
