@@ -10,7 +10,7 @@ COPY ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb .
 
 RUN apt-get -q update && apt-get -q -y upgrade
 RUN apt-get -q -y install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
-RUN apt-get -q -y install poppler-utils bc zip
+RUN apt-get -q -y install poppler-utils bc zip file
 
 COPY ./pdf2epubEX.sh /bin
 
