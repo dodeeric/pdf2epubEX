@@ -86,7 +86,7 @@ if [ -z "$imgformat" ] ; then
   imgformat="jpg"
 fi 
 
-if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] ; then
+if [ "$imgformat" != "png" ] && [ "$imgformat" != "PNG" ] && [ "$imgformat" != "jpg" ] && [ "$imgformat" != "JPG" ]; then
   echo "Error: image format incorrect." ; exit 1
 fi 
 
