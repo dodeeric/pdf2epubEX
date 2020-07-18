@@ -25,7 +25,7 @@ Result will be: myfile.epub
 
 ```
 apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
-apt-get install poppler-utils bc zip
+apt-get install poppler-utils bc zip file
 ```
 
 The Debian package (.deb) is available in this repository.

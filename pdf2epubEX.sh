@@ -7,7 +7,7 @@
 # The pdf2htmlEX tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
 # This means that the pages are not just converted into images as a lot of converters are doing.
 # Usage: ./pdf2epubEX.sh myfile.pdf
-# Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc and zip.
+# Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
 
 if [ -z "$1" ] ; then
   echo "Error: no PDF file specified." ; exit 1
