@@ -21,7 +21,7 @@ Result will be: myfile.epub
 ### Prerequisites
 
 - Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
-- Install *pdf2htmlEX* and some other utilities: poppler-utils, bc and zip. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
+- Install *pdf2htmlEX* and some other utilities: poppler-utils, bc, zip and file. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
 
 ```
 apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
@@ -38,7 +38,7 @@ git clone https://github.com/dodeeric/pdf2epubEX.git
 
 ## Using the Docker image
 
-A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/repository/docker/dodeeric/pdf2epubex).
+A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/r/dodeeric/pdf2epubex).
 
 ### Usage
 
