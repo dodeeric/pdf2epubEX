@@ -46,22 +46,22 @@ heightincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $heightincm)
 
 factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
 
-echo "---------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------------------"
 echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
 echo "Book/PDF Height: $heightrounded inches / $heightincmrounded cm"
 echo "Factor ratio (Height / Width): $factorratiorounded"
 echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
-echo "---------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------------------"
 
-echo -n "Do you want to see more information on the PDF file? (y or n) [default: n]: " ; read moreinfo
+read -p "Do you want to see more information on the PDF file? (y or n) [default: n]: " moreinfo
 
 if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ "$moreinfo" == "yes" ] || [ "$moreinfo" == "Yes" ] ; then
-  echo "---------------------------------------------------------------------------"
+  echo "-------------------------------------------------------------------------------------------------"
   echo "********** PDF Information **********"
   pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
   echo "********** PDF Fonts **********"
   pdffonts $1
-  echo "---------------------------------------------------------------------------"
+  echo "-------------------------------------------------------------------------------------------------"
 fi 
 
 pdftitle=$(pdfinfo $1 2>/dev/null | grep "Title:" | cut -d " " -f11-50)
@@ -69,7 +69,7 @@ pdfauthor=$(pdfinfo $1 2>/dev/null | grep "Author:" | cut -d " " -f10-50)
 
 echo "If you want, you can hit <ENTER> to all the next questions."
 
-echo -n "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " ; read dpi
+read -p "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " dpi
 
 if [ -z "$dpi" ] ; then
   dpi=150
@@ -80,7 +80,7 @@ if ! [[ "$dpi" =~ $re ]] ; then
   echo "Error: image resolution incorrect." ; exit 1
 fi
 
-echo -n "Format of the images in the epub (png or jpg) [default: jpg]: " ; read imgformat
+read -p "Format of the images in the epub (png or jpg) [default: jpg]: " imgformat
 
 if [ -z "$imgformat" ] ; then
   imgformat="jpg"
@@ -91,22 +91,22 @@ if [ "$imgformat" != "png" ] && [ "$imgformat" != "PNG" ] && [ "$imgformat" != "
 fi 
 
 if [ -z "$pdftitle" ] ; then
-  echo -n "Title [default: None]: " ; read title
+  read -p "Title [default: None]: " title
 else
-  echo -n "Title [default: $pdftitle]: " ; read title
+  read -p "Title [default: $pdftitle]: " title
 fi
 
 if [ -z "$pdfauthor" ] ; then
-  echo -n "Author [Default: None]: " ; read author
+  read -p "Author [Default: None]: " author
 else
-  echo -n "Author [Default: $pdfauthor]: " ; read author
+  read -p "Author [Default: $pdfauthor]: " author
 fi
 
-echo -n "Publisher: " ; read publisher
-echo -n "Year: " ; read year
-echo -n "Language: (e.g.: fr): " ; read language
-echo -n "ISBN number: " ; read isbn
-echo -n "Subject (e.g.: history): " ; read tags
+read -p "Publisher: " publisher
+read -p "Year: " year
+read -p "Language: (e.g.: fr): " language
+read -p "ISBN number: " isbn
+read -p "Subject (e.g.: history): " tags
 
 if [ -z "$title" ] && [ -z "$pdftitle" ] ; then
   title="None"
