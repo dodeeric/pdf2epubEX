@@ -45,7 +45,7 @@ A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/r
 To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
 
 ```
-docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX myfile.pdf
+docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
 ```
 
 The result will be: myfile.epub
@@ -72,7 +72,7 @@ You need to install Docker which is available for all computer OS: Windows, MacO
 
 ## Parameters
 
-Once you launch *pdf2epubEX*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
+Once you launch *pdf2epubEX.sh*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
 
 - Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]
 - Format of the images in the epub (png or jpg) [default: jpg]
