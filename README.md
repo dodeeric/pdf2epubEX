@@ -82,7 +82,7 @@ If you want, you can hit `ENTER` to all the questions.
 
 Caution:
 - if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)
-- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images; b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check.
+- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check.
 
 The ePub cover image will be made from the first page of the PDF file (png format).
 
