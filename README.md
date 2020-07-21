@@ -92,9 +92,19 @@ In the examples below, the HTML version is one big file including everything (al
 
 For eBooks with a lot of bitmap images, it is better to chose JPG (compression with loss) to not have a file too big. For eBooks with mainly vector images, it is better to chose PNG (lossless compression).
 
+**PNG or JPG format** (bitmap images only; vector images are converted to bitmap images):
+
 - **Install your own OpenStack Cloud**, Eric Dodémont, 2012, 49 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.epub)
 - **La dynastie belge en images (Preview)**, Eric Dodémont, 2015, 248 pp. (150 dpi / JPG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.epub)
 - **CEB 2015 - Solides et Figures**, 2015, 24 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.epub)
+
+**SVG format** (bitmap and vector images):
+
+Caution: no one of the three following files pass the epubcheck validation using EPUB version 3.2 rules.
+
+- **Install your own OpenStack Cloud**, Eric Dodémont, 2012, 49 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-svg.epub)
+- **La dynastie belge en images (Preview)**, Eric Dodémont, 2015, 248 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-svg.epub)
+- **CEB 2015 - Solides et Figures**, 2015, 24 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub)
 
 ## Additional information
 
