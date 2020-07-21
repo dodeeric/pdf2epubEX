@@ -104,7 +104,9 @@ Caution: a) No one of the three following files pass the epubcheck validation us
 
 - **Install your own OpenStack Cloud** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-svg.epub) (Mainly with vector images, file size: 1.7 MB) 
 - **La dynastie belge en images (Preview)** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-svg.epub) (With a lot of bitmap images, file size: 528 MB)
-- **CEB 2015 - Solides et Figures**: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub) (Mainly with vector images, file size: 1.0 MB)
+- **CEB 2015 - Solides et Figures** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub) (Mainly with vector images, file size: 1.0 MB)
+
+A vector image can be as simple as a line, a rectangle, a table frame, a colored background, etc.
 
 ## Additional information
 
