@@ -74,13 +74,17 @@ You need to install Docker which is available for all computer OS: Windows, MacO
 
 Once you launch *pdf2epubEX.sh*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
 
+- Format of the images in the epub (png, jpg or svg) [default: jpg]
 - Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]
-- Format of the images in the epub (png or jpg) [default: jpg]
 - Title, Author, Publisher, Year, Language: (e.g.: fr), ISBN number, Subject (e.g.: history)
 
 If you want, you can hit `ENTER` to all the questions.
 
-The ePub cover image will be made from the first page of the PDF file.
+Caution:
+- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)
+- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images; b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check.
+
+The ePub cover image will be made from the first page of the PDF file (png format).
 
 ## Examples
 
