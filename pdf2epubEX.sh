@@ -72,7 +72,7 @@ pdfauthor=$(pdfinfo $1 2>/dev/null | grep "Author:" | cut -d " " -f10-50)
 echo "======================"
 echo "Caution:"
 echo "- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)."
-echo "- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images; b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check." 
+echo "- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check." 
 echo "======================"
 
 echo "If you want, you can hit <ENTER> to all the next questions."
