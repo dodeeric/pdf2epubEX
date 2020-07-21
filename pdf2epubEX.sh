@@ -55,21 +55,45 @@ echo "--------------------------------------------------------------------------
 
 read -p "Do you want to see more information on the PDF file? (y or n) [default: n]: " moreinfo
 
+nbrfonts=$(($(pdffonts $1 | wc -l)-2))
+
 if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ "$moreinfo" == "yes" ] || [ "$moreinfo" == "Yes" ] ; then
   echo "-------------------------------------------------------------------------------------------------"
-  echo "********** PDF Information **********"
   pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
-  echo "********** PDF Fonts **********"
-  pdffonts $1
+  echo "PDF fonts:"
+  echo "name                                 type              encoding         emb sub uni object id"
+  pdffonts $1 | tail -$nbrfonts
   echo "-------------------------------------------------------------------------------------------------"
 fi 
 
 pdftitle=$(pdfinfo $1 2>/dev/null | grep "Title:" | cut -d " " -f11-50)
 pdfauthor=$(pdfinfo $1 2>/dev/null | grep "Author:" | cut -d " " -f10-50)
 
+echo "======================"
+echo "Caution:"
+echo "- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)"
+echo "- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images; b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check." 
+echo "======================"
+
 echo "If you want, you can hit <ENTER> to all the next questions."
 
-read -p "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " dpi
+read -p "Format of the images in the epub (png, jpg or svg) [default: jpg]: " imgformat
+
+if [ -z "$imgformat" ] ; then
+  imgformat="jpg"
+fi 
+
+if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] && [ "$imgformat" != "svg" ] ; then
+  echo "Error: image format incorrect." ; exit 1
+fi 
+
+if [ "$imgformat" != "svg" ] ; then
+  read -p "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " dpi
+fi
+
+if [ "$imgformat" == "svg" ] ; then
+  dpi=300
+fi
 
 if [ -z "$dpi" ] ; then
   dpi=150
@@ -79,16 +103,6 @@ re='^[0-9]+$'
 if ! [[ "$dpi" =~ $re ]] ; then
   echo "Error: image resolution incorrect." ; exit 1
 fi
-
-read -p "Format of the images in the epub (png or jpg) [default: jpg]: " imgformat
-
-if [ -z "$imgformat" ] ; then
-  imgformat="jpg"
-fi 
-
-if [ "$imgformat" != "png" ] && [ "$imgformat" != "PNG" ] && [ "$imgformat" != "jpg" ] && [ "$imgformat" != "JPG" ]; then
-  echo "Error: image format incorrect." ; exit 1
-fi 
 
 if [ -z "$pdftitle" ] ; then
   read -p "Title [default: None]: " title
@@ -186,8 +200,14 @@ mv *.xhtml ./bookroot/OEBPS/
 
 if [ $imgformat == "png" ] ; then
   mv *.png ./bookroot/OEBPS/
-else
+fi
+
+if [ $imgformat == "jpg" ] ; then
   mv *.jpg ./bookroot/OEBPS/
+fi
+
+if [ $imgformat == "svg" ] ; then
+  mv *.svg ./bookroot/OEBPS/
 fi
 
 echo -n "application/epub+zip" > ./bookroot/mimetype
@@ -240,11 +260,22 @@ echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/png\"/>" >> ./conte
 done
 mv cover.xxx cover.png
 
-else
+fi
+
+if [ $imgformat == "jpg" ] ; then
 
 for f in *.jpg; do
 ff=`basename "$f" .jpg`
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/jpeg\"/>" >> ./content.opf
+done
+
+fi
+
+if [ $imgformat == "svg" ] ; then
+
+for f in *.svg ; do
+ff=`basename "$f" .svg`
+echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/svg+xml\"/>" >> ./content.opf
 done
 
 fi
