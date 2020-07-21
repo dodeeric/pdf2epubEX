@@ -164,6 +164,12 @@ echo "Wait..."
 
 pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
+if [ "$imgformat" == "svg" ] ; then
+  dpi=XXX
+fi
+
+description="PDF: $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX & pdf2epubEX/Eric Dodemont"
+
 # Update the top and bottom of each page file
 
 for f in *.page ; do
@@ -238,7 +244,7 @@ cd ../../
 
 date=$(date +%Y-%m-%dT%H:%M:%SZ)
 
-echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$language</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:year>$year</dc:date>\n    <meta content=\"cover-image\" name=\"cover\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
+echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$language</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:date>$year</dc:date>\n    <dc:description>$description</dc:description>\n    <meta content=\"cover-image\" name=\"cover\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
 
 cd ./bookroot/OEBPS/
 
