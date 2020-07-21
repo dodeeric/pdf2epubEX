@@ -100,14 +100,11 @@ For eBooks with a lot of bitmap images, it is better to chose JPG (compression w
 
 **SVG format** (bitmap and vector images):
 
-Caution: 
+Caution: a) No one of the three following files pass the epubcheck validation using EPUB version 3.2 rules ; b) PDF with a lot of bitmap images can become voluminous because these bitmap images are coded in Base64 in the SVG files.
 
-- No one of the three following files pass the epubcheck validation using EPUB version 3.2 rules.
-- PDF with a lot of bitmap images can become voluminous because these bitmap images are coded in Base64 in the SVG files.
-
-- **Install your own OpenStack Cloud**, Eric Dodémont, 2012, 49 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-svg.epub) (Mainly with vector images, file size: 1.7 MB) 
-- **La dynastie belge en images (Preview)**, Eric Dodémont, 2015, 248 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-svg.epub) (With a lot of bitmap images, file size: 528 MB)
-- **CEB 2015 - Solides et Figures**, 2015, 24 pp. (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub) (Mainly with vector images, file size: 1.0 MB)
+- **Install your own OpenStack Cloud** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-svg.epub) (Mainly with vector images, file size: 1.7 MB) 
+- **La dynastie belge en images (Preview)** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-svg.epub) (With a lot of bitmap images, file size: 528 MB)
+- **CEB 2015 - Solides et Figures**: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub) (Mainly with vector images, file size: 1.0 MB)
 
 ## Additional information
 
