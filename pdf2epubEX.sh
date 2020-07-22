@@ -168,7 +168,7 @@ if [ "$imgformat" == "svg" ] ; then
   dpi=XXX
 fi
 
-description="PDF: $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX & pdf2epubEX/Eric Dodemont"
+description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX & pdf2epubEX/Eric Dodemont"
 
 # Update the top and bottom of each page file
 
