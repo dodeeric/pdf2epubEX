@@ -143,7 +143,7 @@ if [ -z "$publisher" ] ; then
 fi 
 
 if [ -z "$year" ] ; then
-  year="None"
+  year="1900"
 fi 
 
 if [ -z "$language" ] ; then
@@ -163,8 +163,6 @@ echo "Wait..."
 # pdf2htmlEX: the parameter --dpi and --fit-width/fit-height are totaly independant.
 
 pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
-
-description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX & pdf2epubEX/Eric Dodemont"
 
 # Update the top and bottom of each page file
 
@@ -238,7 +236,12 @@ cd ../../
 
 # Generate the manisfest
 
+if [ "$imgformat" == "svg" ] ; then
+  dpi=xxx
+fi
+
 date=$(date +%Y-%m-%dT%H:%M:%SZ)
+description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX, pdf2epubEX/Eric Dodemont"
 
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$language</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:date>$year</dc:date>\n    <dc:description>$description</dc:description>\n    <meta content=\"cover-image\" name=\"cover\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
 
@@ -306,10 +309,6 @@ cat ../../nav > ./nav.xhtml
 sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 
 cd ../
-
-if [ "$imgformat" == "svg" ] ; then
-  dpi=XXX
-fi
 
 epubfilename=`basename "$1" .pdf`
 epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
