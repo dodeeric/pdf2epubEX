@@ -164,10 +164,6 @@ echo "Wait..."
 
 pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
 
-if [ "$imgformat" == "svg" ] ; then
-  dpi=XXX
-fi
-
 description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX & pdf2epubEX/Eric Dodemont"
 
 # Update the top and bottom of each page file
@@ -310,6 +306,10 @@ cat ../../nav > ./nav.xhtml
 sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 
 cd ../
+
+if [ "$imgformat" == "svg" ] ; then
+  dpi=XXX
+fi
 
 epubfilename=`basename "$1" .pdf`
 epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
