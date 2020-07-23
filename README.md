@@ -97,8 +97,8 @@ In the examples below, the HTML version is one big file including everything (al
 
 - Install your own OpenStack Cloud, 49 pages, bitmap and vector images in the PDF
 
-[PDF/1MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) |
-[ePub/JPG-150DPI-1.5MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) |
+[PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf)(1MB) |
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub)(JPG-150DPI-1.5MB) |
 [ePub/JPG-300DPI-2.0MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) |
 [ePub/PNG-150DPI-1.6MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) |
 [ePub/PNG-300DPI-3.2MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) |
