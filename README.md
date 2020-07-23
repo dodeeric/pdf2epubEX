@@ -123,7 +123,7 @@ In the examples below, the HTML version is one big file including everything (al
 
 - CEB 2015 - Solides et figures, 24 pages, only vector images in the PDF
 
-[PDF/276KB](CEB-2015-Solides-et-Figures.pdf)
+[PDF](CEB-2015-Solides-et-Figures.pdf) (0.3MB)
 
 [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5MB - JPG - 150DPI) |
 [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1MB - JPG - 300DPI)
