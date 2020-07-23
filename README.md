@@ -99,11 +99,11 @@ In the examples below, the HTML version is one big file including everything (al
 
 [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) (1.0MB)
 
-JPG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5MB - 150DPI) |
-[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0MB - 300DPI)
+JPG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (150DPI - 1.5MB) |
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (300DPI - 2.0MB)
 
-PNG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6MB - 150DPI) |
-[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2MB - 300DPI)
+PNG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (150DPI - 1.6MB) |
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (300DPI - 3.2MB)
 
 SVG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub) (1.4MB)
 
