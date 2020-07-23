@@ -124,11 +124,14 @@ In the examples below, the HTML version is one big file including everything (al
 - CEB 2015 - Solides et figures, 24 pages, only vector images in the PDF
 
 [PDF/276KB](CEB-2015-Solides-et-Figures.pdf)
-[ePub/JPG-150DPI-550KB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.epub)
-[ePub/JPG-300DPI-1.1MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.epub)
-[ePub/PNG-150DPI-707KB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.epub)
-[ePub/PNG-300DPI-1.5MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.epub)
-[ePub/SVG-1MB](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (X)
+
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5MB - JPG - 150DPI) |
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1MB - JPG - 300DPI)
+
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7MB - PNG - 150DPI) |
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5MB - PNG - 300DPI)
+
+[ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0MB - SVG) (X)
 
 (X) Does not pass the epub check validation using version epub 3.2 rules (this does not mean the ePub will not be displayed properly in some ePub readers).
 
