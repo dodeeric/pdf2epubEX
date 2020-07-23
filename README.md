@@ -80,9 +80,14 @@ Once you launch *pdf2epubEX.sh*, some information will be displayed like the boo
 
 If you want, you can hit `ENTER` to all the questions.
 
-Caution:
-- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)
-- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files; c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check.
+Image formats:
+
+- if you chose png or jpg (bitmap formats), the vector images of the PDF will be converted in bitmap images (rasterized).
+- if you chose svg (vector and bitmap format), the vector images of the PDF will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files (Base64 coded); c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check.
+
+A vector image can be as simple as a line, a rectangle, a table frame, a colored background, etc.
+
+For eBooks with a lot of bitmap images, it is better to chose JPG (compression with loss) to not have a file too big. For eBooks with mainly vector images, it is better to chose PNG (lossless compression).
 
 The ePub cover image will be made from the first page of the PDF file (png format).
 
@@ -90,23 +95,45 @@ The ePub cover image will be made from the first page of the PDF file (png forma
 
 In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
-For eBooks with a lot of bitmap images, it is better to chose JPG (compression with loss) to not have a file too big. For eBooks with mainly vector images, it is better to chose PNG (lossless compression).
+- Install your own OpenStack Cloud, 49 pages, bitmap and vector images in the PDF
 
-**PNG or JPG format** (bitmap images only; vector images are converted to bitmap images):
+[PDF/1MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf)
 
-- **Install your own OpenStack Cloud**, Eric Dodémont, 2012, 49 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.epub)
-- **La dynastie belge en images (Preview)**, Eric Dodémont, 2015, 248 pp. (150 dpi / JPG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont.epub)
-- **CEB 2015 - Solides et Figures**, 2015, 24 pp. (150 dpi / PNG): [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.pdf) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.html) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures.epub)
+[ePub/JPG-150DPI-1.5MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub)
+[ePub/JPG-300DPI-2.0MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub)
 
-**SVG format** (bitmap and vector images):
+[ePub/PNG-150DPI-1.6MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub)
+[ePub/PNG-300DPI-3.2MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub)
 
-Caution: a) No one of the three following files pass the epubcheck validation using EPUB version 3.2 rules ; b) PDF with a lot of bitmap images can become voluminous because these bitmap images are coded in Base64 in the SVG files.
+[ePub/SVG-1.4MB](Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub)
 
-- **Install your own OpenStack Cloud** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-svg.epub) (Mainly with vector images, file size: 1.7 MB) 
-- **La dynastie belge en images (Preview)** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-svg.epub) (With a lot of bitmap images, file size: 528 MB)
-- **CEB 2015 - Solides et Figures** (SVG): [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-svg.epub) (Mainly with vector images, file size: 1.0 MB)
+- La dynastie belge en images, 248 pages, lot of bitmap images in the PDF
 
-A vector image can be as simple as a line, a rectangle, a table frame, a colored background, etc.
+[PDF/150DPI-133MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi.pdf)
+[PDF/300DPI-396MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi.pdf)
+
+[ePUB/JPG-150DPI-48MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub)
+[ePub/JPG-300DPI-150MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub)
+
+[ePub/PNG-150DPI-209MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub)
+[ePub/PNG-300DPI-628MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub)
+
+[ePub/SVG-150DPI-13MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.epub) X
+[ePub/SVG-300DPI/504MB](La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.epub) X
+
+- CEB 2015 - Solides et figures, 24 pages, only vector images in the PDF
+
+[PDF/276KB](CEB-2015-Solides-et-Figures.pdf)
+
+[ePub/JPG-150DPI-550KB](CEB-2015-Solides-et-Figures-150dpi-jpg.epub)
+[ePub/JPG-300DPI-1.1MB](CEB-2015-Solides-et-Figures-300dpi-jpg.epub)
+
+[ePub/PNG-150DPI-707KB](CEB-2015-Solides-et-Figures-150dpi-png.epub)
+[ePub/PNG-300DPI-1.5MB](CEB-2015-Solides-et-Figures-300dpi-png.epub)
+
+[ePub/SVG-1MB](CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) X
+
+X = Does not pass the epub check validation using version epub 3.2 rules (this does not mean the ePub will not be displayed properly in some ePub readers).
 
 ## Additional information
 
