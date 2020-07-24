@@ -106,6 +106,7 @@ In the examples below, the HTML version is one big file including everything (al
 
 PDF:
 
+|              |             |          |         |
 | ---          | ---         | ----     | ---     |
 | **PDF**      | [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) (1.0) |   |   |
 
