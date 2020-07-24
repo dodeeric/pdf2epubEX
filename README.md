@@ -95,7 +95,14 @@ The ePub cover image will be made from the first page of the PDF file (png forma
 
 In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg, .svg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
-##### Install your own OpenStack Cloud, 49 pages, bitmap and vector images in the PDF
+**Install your own OpenStack Cloud:** 49 pages, bitmap and vector images in the PDF:
+
+| xxx          | xxx         | xxx  |
+| ---          | ---         | ---- |
+| PDF          |             |      |
+| PNG          |             |      |
+| JPG          |             |      |
+| SVG          |             |      |
 
 [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) (1.0MB)
 
@@ -107,7 +114,7 @@ PNG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-
 
 SVG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub) (1.4MB)
 
-##### La dynastie belge en images, 248 pages, lot of bitmap images in the PDF
+**La dynastie belge en images:** 248 pages, lot of bitmap images in the PDF:
 
 [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi.pdf) (133MB - 150DPI) |
 [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi.pdf) (396MB - 300DPI)
@@ -121,7 +128,7 @@ SVG: [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-
 [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.epub) (13MB - SVG - 150DPI) (X) |
 [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.epub) (504MB - SVG - 300DPI) (X)
 
--##### CEB 2015 - Solides et figures, 24 pages, only vector images in the PDF
+**CEB 2015 - Solides et figures:** 24 pages, only vector images in the PDF:
 
 [PDF](CEB-2015-Solides-et-Figures.pdf) (0.3MB)
 
