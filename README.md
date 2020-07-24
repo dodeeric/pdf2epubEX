@@ -107,9 +107,6 @@ In the examples below, the HTML version is one big file including everything (al
 | **SVG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub) (1.4) |   |   |
 | **JPG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0) |
 | **PNG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2) |
-| **SVG**      | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.html) (2.2) |   |   |
-| **JPG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.html) (1.8) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.html) (5.7) |
-| **PNG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.html) (1.1) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.html) (2.5) |
 
 **La dynastie belge en images:** 248 pages, lot of bitmap images in the PDF:
 
@@ -128,6 +125,9 @@ In the examples below, the HTML version is one big file including everything (al
 | **SVG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
 | **JPG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1) |         |
 | **PNG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5) |         |
+| **SVG**      | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.html) (2.2) |   |   |
+| **JPG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.html) (1.8) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.html) (5.7) |
+| **PNG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.html) (1.1) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.html) (2.5) |
 
 ## Additional information
 
