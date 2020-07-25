@@ -101,7 +101,8 @@ In the examples below, the HTML version is one big file including everything (al
 
 (#) Does not pass the epub check validation using version epub 3.2 rules (this does not mean the ePub will not be displayed properly in some ePub readers).
 
-**Install your own OpenStack Cloud:** 49 pages, bitmap and vector images in the PDF:
+**Install your own OpenStack Cloud:** 
+(49 pages, bitmap and vector images in the PDF)
 
 |              |             | 150 DPI  | 300 DPI |
 | ---          | ---         | ----     | ---     |
@@ -110,7 +111,8 @@ In the examples below, the HTML version is one big file including everything (al
 | **JPG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0) |
 | **PNG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2) |
 
-**La dynastie belge en images:** 248 pages, lot of bitmap images in the PDF:
+**La dynastie belge en images:**
+(248 pages, lot of bitmap images in the PDF)
 
 |              | 150 DPI  | 300 DPI |
 | ---          | ----     | ---     |
@@ -119,17 +121,18 @@ In the examples below, the HTML version is one big file including everything (al
 | **JPG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub) (48) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
 | **PNG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub) (209) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub) (628) |
 
-**CEB 2015 - Solides et figures:** 24 pages, only vector images in the PDF:
+**CEB 2015 - Solides et figures:**
+(24 pages, only vector images in the PDF)
 
 |              |             | 150 DPI  | 300 DPI |
 | ---          | ---         | ----     | ---     |
-| **PDF**      | [PDF](http://files.dodeeric.be/CEB-2015-Solides-et-Figures.pdf) (0.3) |   |   |
-| **SVG**      | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
-| **JPG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1) |         |
-| **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5) |         |
-| **SVG**      | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-xxxdpi-svg.html) (2.2) |   |   |
-| **JPG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-jpg.html) (1.8) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-jpg.html) (5.7) |
-| **PNG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-png.html) (1.1) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-png.html) (2.5) |
+| **PDF**      | [PDF](http://files.dodeeric.be/CEB-2015-Solides-et-figures.pdf) (0.3) |   |   |
+| **SVG**      | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
+| **JPG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-jpg.epub) (0.5) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-jpg.epub) (1.1) |         |
+| **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-png.epub) (0.7) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-png.epub) (1.5) |         |
+| **SVG**      | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-xxxdpi-svg.html) (2.2) |   |   |
+| **JPG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-jpg.html) (1.8) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-jpg.html) (5.7) |
+| **PNG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-png.html) (1.1) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-png.html) (2.5) |
 
 ## Additional information
 
