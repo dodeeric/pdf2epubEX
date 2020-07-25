@@ -2,7 +2,7 @@
 
 This Bash script uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
 
-The result is a *fixed layout* ePub: the layout is perfectly retained and all the fonts are embedded.
+The result is a *fixed layout* ePub version 3: the layout is perfectly retained and all the fonts are embedded.
 
 The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images). This means that the pages are not just converted into images as a lot of converters are doing.
 
