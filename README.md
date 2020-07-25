@@ -97,11 +97,10 @@ The ePub cover image will be made from the first page of the PDF file (png forma
 
 In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg, .svg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
-(X) The size of the file in MB.
-
+(X) The size of the file in MB.<br/>
 (#) Does not pass the epub check validation using version epub 3.2 rules (this does not mean the ePub will not be displayed properly in some ePub readers).
 
-**Install your own OpenStack Cloud:** 
+**Install your own OpenStack Cloud:**<br/> 
 (49 pages, bitmap and vector images in the PDF)
 
 |              |             | 150 DPI  | 300 DPI |
@@ -111,7 +110,7 @@ In the examples below, the HTML version is one big file including everything (al
 | **JPG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0) |
 | **PNG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2) |
 
-**La dynastie belge en images:**
+**La dynastie belge en images:**<br/>
 (248 pages, lot of bitmap images in the PDF)
 
 |              | 150 DPI  | 300 DPI |
@@ -121,7 +120,7 @@ In the examples below, the HTML version is one big file including everything (al
 | **JPG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub) (48) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
 | **PNG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub) (209) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub) (628) |
 
-**CEB 2015 - Solides et figures:**
+**CEB 2015 - Solides et figures:**<br/>
 (24 pages, only vector images in the PDF)
 
 |              |             | 150 DPI  | 300 DPI |
