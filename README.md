@@ -123,7 +123,7 @@ In the examples below, the HTML version is one big file including everything (al
 
 |              |             | 150 DPI  | 300 DPI |
 | ---          | ---         | ----     | ---     |
-| **PDF**      | [PDF](CEB-2015-Solides-et-Figures.pdf) (0.3) |   |   |
+| **PDF**      | [PDF](http://files.dodeeric.be/CEB-2015-Solides-et-Figures.pdf) (0.3) |   |   |
 | **SVG**      | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
 | **JPG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1) |         |
 | **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5) |         |
