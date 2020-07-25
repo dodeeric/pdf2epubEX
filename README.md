@@ -141,7 +141,7 @@ The script is based on the method described in my book published in 2014: *Fixed
 
 To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
 
-A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout ePub): Google Play Books, BookShelf, PocketBook, Apple Books (only on iOS; formely known as Apple iBooks), etc. 
+A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout ePub) available on different platforms (Android, iOS, Windows, MacOS, or Linux): [Google Play Books](https://play.google.com/store/apps/details?id=com.google.android.apps.books), [BookShelf](https://support.vitalsource.com/hc/en-us/articles/201344733-Download-Bookshelf), [PocketBook](https://pocketbook.ch/en-ch/app), [Adobe Digital Editions](https://www.adobe.com/solutions/ebook/digital-editions/download.html), [Apple Books](https://www.apple.com/apple-books) (only on iOS; formely known as Apple iBooks), etc. 
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
 
