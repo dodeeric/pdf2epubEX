@@ -17,9 +17,9 @@ if ! test -f "$1" ; then
   echo "Error: file does not exist." ; exit 1 
 fi
 
-testfile=$(file $1 | grep "PDF document")
+testfile=$(file "$1" | grep "PDF document")
 if [ -z "$testfile" ] ; then
-  echo "Error: the file is not a PDF file" ; exit 1
+  echo "Error: the file is not a PDF file." ; exit 1
 fi
 
 cp $1 ./mybook.pdf
