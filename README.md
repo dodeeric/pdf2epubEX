@@ -105,31 +105,31 @@ In the examples below, the HTML version is one big file including everything (al
 
 |              |             | 150 DPI  | 300 DPI |
 | ---          | ---         | ----     | ---     |
-| **PDF**      | [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) (1.0) |   |   |
-| **SVG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub) (1.4) |   |   |
-| **JPG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0) |
-| **PNG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2) |
+| **PDF**      | [PDF](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont.pdf) (1.0) |   |   |
+| **SVG**      | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-xxxdpi-svg.epub) (1.4) |   |   |
+| **JPG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-jpg.epub) (1.5) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-jpg.epub) (2.0) |
+| **PNG**      |             | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-150dpi-png.epub) (1.6) | [ePub](http://files.dodeeric.be/Install-your-own-OpenStack-Cloud-Eric-Dodemont-300dpi-png.epub) (3.2) |
 
 **La dynastie belge en images:** 248 pages, lot of bitmap images in the PDF:
 
 |              | 150 DPI  | 300 DPI |
 | ---          | ----     | ---     |
-| **PDF**      | [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi.pdf) (56) | [PDF](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi.pdf) (396) |
-| **SVG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.epub) (78)(#)| [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.epub) (504)(#) |
-| **JPG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub) (48) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
-| **PNG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub) (209) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub) (628) |
+| **PDF**      | [PDF](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi.pdf) (56) | [PDF](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi.pdf) (396) |
+| **SVG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.epub) (78)(#)| [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.epub) (504)(#) |
+| **JPG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub) (48) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
+| **PNG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub) (209) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub) (628) |
 
 **CEB 2015 - Solides et figures:** 24 pages, only vector images in the PDF:
 
 |              |             | 150 DPI  | 300 DPI |
 | ---          | ---         | ----     | ---     |
 | **PDF**      | [PDF](CEB-2015-Solides-et-Figures.pdf) (0.3) |   |   |
-| **SVG**      | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
-| **JPG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1) |         |
-| **PNG**      |             | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7) | [ePub](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5) |         |
-| **SVG**      | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-xxxdpi-svg.html) (2.2) |   |   |
-| **JPG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-jpg.html) (1.8) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-jpg.html) (5.7) |
-| **PNG**      |   | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-150dpi-png.html) (1.1) | [HTML](https://dodeeric-web.s3.eu-central-1.amazonaws.com/CEB-2015-Solides-et-Figures-300dpi-png.html) (2.5) |
+| **SVG**      | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
+| **JPG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-jpg.epub) (0.5) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-jpg.epub) (1.1) |         |
+| **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-png.epub) (0.7) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-png.epub) (1.5) |         |
+| **SVG**      | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-xxxdpi-svg.html) (2.2) |   |   |
+| **JPG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-jpg.html) (1.8) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-jpg.html) (5.7) |
+| **PNG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-150dpi-png.html) (1.1) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-Figures-300dpi-png.html) (2.5) |
 
 ## Additional information
 
