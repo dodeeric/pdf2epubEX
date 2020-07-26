@@ -153,7 +153,7 @@ A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout e
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
 
-To use Google Play Books, you have to go to **Settings**, then set **Enable uploading (from downloads, mail or other apps)**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner). Please note that the ePub file has to pass a pre-check to be able to be hosted in Google cloud. 
+To use Google Play Books, you have to go to **Settings**, then set **Enable uploading**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner). Please note that the ePub file has to pass a pre-check to be able to be hosted in Google cloud. 
  
 More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed Layouts (EPUB Content Documents 3.2)](https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts) and [Fixed-Layout Properties (EPUB Packages 3.2)](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl).
 
