@@ -140,12 +140,13 @@ Legends:
 | **JPG**      | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.html) (69) | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.html) (217) |
 | **PNG**      | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.html) (296) | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.html) (869) |
 
-Vector image quality in different formats:
+Vector image quality in different formats (zoom of 500 %):
 
 1) SVG (vector format):
 
-|---|---|
-|![SVG](http://files.dodeeric.be/i-svg.png)|
+| Vector |
+| --- |
+| ![SVG](http://files.dodeeric.be/i-svg.png) |
 
 2) PNG (bitmap format, lossless compression):
 
