@@ -148,9 +148,7 @@ Vector image quality in different formats:
 
 2) PNG (bitmap format, lossless compression):
 
-![PNG-150](http://files.dodeeric.be/i-png-150.png)
-
-![PNG-300](http://files.dodeeric.be/i-png-300.png)
+![PNG-150](http://files.dodeeric.be/i-png-150.png) ![PNG-300](http://files.dodeeric.be/i-png-300.png)
 
 3) JPG (bitmap format, compression with loss):
 
