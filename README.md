@@ -97,9 +97,9 @@ In the examples below, the HTML version is one big file including everything (al
 
 Legends:
 
-(X) The size of the file in MB.<br/>
-(#) Does not pass the epub check validation using version epub 3.2 rules (commands not allowed in some svg files). This does not mean the ePub will not be displayed properly in most ePub readers.<br>
-**(ePub)** (in bold) The recommended ePub version. 
+- Number in parentheses: the size of the file in MB.<br/>
+- Hashtag in parentheses: the ePub file does not pass the epub check validation using version epub 3.2 rules (commands not allowed in some svg files). This does not mean the ePub will not be displayed properly in most ePub readers.<br>
+- ePub written in bold: the recommended ePub version. 
 
 **CEB 2015 - Solides et figures**<br/>
 (24 pages, only vector images in the PDF)
