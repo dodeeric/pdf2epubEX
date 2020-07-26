@@ -106,7 +106,7 @@ In the examples below, the HTML version is one big file including everything (al
 | **PDF**      | [PDF](http://files.dodeeric.be/CEB-2015-Solides-et-figures.pdf) (0.3) |   |   |
 | **SVG**      | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-xxxdpi-svg.epub) (1.0)(#) |   |   |
 | **JPG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-jpg.epub) (0.6) | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-jpg.epub) (1.1) |         |
-| **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-png.epub) (0.7) | **[ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-png.epub)** (1.5) |         |
+| **PNG**      |             | [ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-png.epub) (0.7) | ++[ePub](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-png.epub)++ (1.5) |         |
 | **SVG**      | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-xxxdpi-svg.html) (2.2) |   |   |
 | **JPG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-jpg.html) (1.8) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-jpg.html) (5.7) |
 | **PNG**      |   | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-150dpi-png.html) (1.1) | [HTML](http://files.dodeeric.be/CEB-2015-Solides-et-figures-300dpi-png.html) (2.5) |
@@ -131,7 +131,7 @@ In the examples below, the HTML version is one big file including everything (al
 | ---          | ----     | ---     |
 | **PDF**      | [PDF](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi.pdf) (56) | [PDF](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi.pdf) (396) |
 | **SVG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.epub) (78)(#) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.epub) (504)(#) |
-| **JPG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub) (48) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
+| **JPG**      | **[ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.epub)** (48) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.epub) (150) |
 | **PNG**      | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-png.epub) (209) | [ePub](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-png.epub) (628) |
 | **SVG**      | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-150dpi-xxxdpi-svg.html) (142) | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-xxxdpi-svg.html) (895) |
 | **JPG**      | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-150dpi-jpg.html) (69) | [HTML](http://files.dodeeric.be/La-dynastie-belge-en-images-Preview-Eric-Dodemont-300dpi-300dpi-jpg.html) (217) |
