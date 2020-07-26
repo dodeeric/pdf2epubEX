@@ -144,17 +144,15 @@ Vector image quality in different formats:
 
 1) SVG (vector format):
 
-![SVG](http://files.dodeeric.be/i-svg.png)
+         ![SVG](http://files.dodeeric.be/i-svg.png)
 
 2) PNG (bitmap format, lossless compression):
 
-![PNG-150](http://files.dodeeric.be/i-png-150.png) ![PNG-300](http://files.dodeeric.be/i-png-300.png)
+150 DPI: ![PNG-150](http://files.dodeeric.be/i-png-150.png)      300 DPI: ![PNG-300](http://files.dodeeric.be/i-png-300.png)
 
 3) JPG (bitmap format, compression with loss):
 
-![JPG-150](http://files.dodeeric.be/i-jpg-150.png)
-
-![JPG-300](http://files.dodeeric.be/i-jpg-300.png)
+150 DPI: ![JPG-150](http://files.dodeeric.be/i-jpg-150.png)      300 DPI: ![JPG-300](http://files.dodeeric.be/i-jpg-300.png)
 
 ## Additional information
 
