@@ -98,7 +98,7 @@ The ePub cover image will be made from the first page of the PDF file (png forma
 In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64, which can make the file quite big). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg, .svg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
 (X) The size of the file in MB.<br/>
-(#) Does not pass the epub check validation using version epub 3.2 rules (this does not mean the ePub will not be displayed properly in some ePub readers).
+(#) Does not pass the epub check validation using version epub 3.2 rules (commands not allowed in some svg files). This does not mean the ePub will not be displayed properly in most ePub readers.
 
 **CEB 2015 - Solides et figures**<br/>
 (24 pages, only vector images in the PDF)
@@ -153,7 +153,7 @@ A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout e
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
 
-To use Google Play Books, you have to go to **Settings**, then set **Enable uploading (from downloads, mail or other apps)**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner).
+To use Google Play Books, you have to go to **Settings**, then set **Enable uploading (from downloads, mail or other apps)**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner). Please note that the ePub file has to pass a pre-check to be able to be hosted in Google cloud. 
  
 More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed Layouts (EPUB Content Documents 3.2)](https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts) and [Fixed-Layout Properties (EPUB Packages 3.2)](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl).
 
