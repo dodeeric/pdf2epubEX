@@ -188,7 +188,7 @@ This script is only converting a PDF to a fixed layout ePub. It will be of no us
 
 Regarding the images, *pdf2htmlEX* makes one background image per page which can include more than one image from the PDF.
 
-Regarding the text, even after extracting the text from a PDF, this text will have to be somewhat edited manually or automatically, for example to remove the hyphenation, remove the CR/LF at the end of each lines, remove the page numbers, move the footnotes. This is even more difficult for PDF with sophisticated layout because you will have to move some paragraphs in the correct reading order. 
+Regarding the text, even after extracting the text from a PDF, this text will have to be somewhat edited manually or automatically, for example to remove the hyphenations, remove the CR/LF at the end of each lines, remove the page numbers, move the footnotes. This is even more difficult for PDF with sophisticated layout because you will have to move some paragraphs in the correct reading order. 
 
 If you are using Linux, you can install the *poppler-utils* package. Then you can extract the text and the images with the two following tools:
 
