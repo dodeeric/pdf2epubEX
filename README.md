@@ -166,17 +166,36 @@ Vector image quality in different formats (zoom of 500 %):
 
 The script is based on the method described in my book published in 2014: *Fixed Layout ePub: A Practical Guide to Publish eBooks from PDF Files*. It is available on [Amazon](https://www.amazon.fr/dp/1502809508) and on [Googgle Play Books](https://play.google.com/store/books/details?id=LRQ-BQAAQBAJ).
 
-### Fix Layout ePub
+### Fixed layout ePub
 
-To read a fix layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
+To read a fixed layout ePub, the best device is a tablet (Android or iOS/iPad). A smartphone is not adapted most of the time because of the too small screen size.
 
 A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout ePub) available on different platforms (Android, iOS, Windows, MacOS, or Linux): [Google Play Books](https://play.google.com/store/apps/details?id=com.google.android.apps.books), [BookShelf](https://support.vitalsource.com/hc/en-us/articles/201344733-Download-Bookshelf), [PocketBook](https://pocketbook.ch/en-ch/app), [Adobe Digital Editions](https://www.adobe.com/solutions/ebook/digital-editions/download.html), [Apple Books](https://www.apple.com/apple-books) (only on iOS; formely known as Apple iBooks), etc. 
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
 
+If you want to publish an eBook on one of the available eBook stores (Google Play Books, Apple Books, Rakuten Kobo, etc.), you have to provide an ePub file and not a PDF file.
+
 To use Google Play Books, you have to go to **Settings**, then set **Enable uploading**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner). Please note that: a) the ePub file has to pass a pre-check to be able to be hosted in the Google cloud; b) if you upload a PDF, all pages (text + images) will be converted into images (the text and vector images are rasterized, and no hidden text layer will be added: it means no text search or copy/paste is possible). 
  
 More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed Layouts (EPUB Content Documents 3.2)](https://www.w3.org/publishing/epub/epub-contentdocs.html#sec-fixed-layouts) and [Fixed-Layout Properties (EPUB Packages 3.2)](https://www.w3.org/publishing/epub/epub-packages.html#sec-package-metadata-fxl).
+
+### Reflowable text ePub
+
+This script is only converting a PDF to a fixed layout ePub. It will be of no use if you want a reflowable text ePub. 
+
+*pdf2htmlEX* is **The** tool to maintain the original layout. Hence, it is not the best tool to extract the text and the images from a PDF. 
+
+Regarding the images, *pdf2htmlEX* makes one background image per page which can include more than one image from the PDF.
+
+Regarding the text, even after extracting the text from a PDF, this text will have to be somewhat edited manually or automatically, for example to remove the hyphenation, remove the CR/LF at the end of each lines, remove the page numbers, move the footnotes. This is even more difficult for PDF with sophisticated layout because you will have to move some paragraphs in the correct reading order. 
+
+If you are using Linux, you can install the *poppler-utils* package. Then you can extract the text and the images with the two following tools:
+
+- Extract the text: `pdftotext myfile.pdf` ==> Result: [myfile.txt](http://files.dodeeric.be/myfile.txt)
+- Extract the images: `pdfimages -all myfile.pdf ./myfile` ==> Result: [myfile-000.jpg](http://files.dodeeric.be/myfile-000.jpg), [myfile-001.jpg](http://files.dodeeric.be/myfile-001.jpg), [myfile-002.png](http://files.dodeeric.be/myfile-002.png), [myfile-003.jpg](http://files.dodeeric.be/myfile-003.jpg).
+
+As you can see the text needs heavy manual editing before using a tool to convert it to a reflowable text ePub (Sigil, Calibre, Kotobee, Pandoc, etc.)
 
 ### Other Git Repositories
 
