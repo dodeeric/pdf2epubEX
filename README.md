@@ -192,7 +192,7 @@ Regarding the text, even after extracting the text from a PDF, this text will ha
 
 If you are using Linux, you can install the *poppler-utils* package. Then you can extract the text and the images with the two following tools:
 
-PDF: *Install your own OpenStack Cloud* = [myfile.pdf](myfile.pdf)
+PDF: [myfile.pdf](myfile.pdf) (*Install your own OpenStack Cloud*)
 
 - Extract the text: `pdftotext myfile.pdf` ==> Result: [myfile.txt](http://files.dodeeric.be/myfile.txt)
 - Extract the images: `pdfimages -all myfile.pdf ./myfile` ==> Result: [myfile-000.png](http://files.dodeeric.be/myfile-000.png), [myfile-001.png](http://files.dodeeric.be/myfile-001.png), [myfile-002.png](http://files.dodeeric.be/myfile-002.png), [myfile-003.png](http://files.dodeeric.be/myfile-003.png), [myfile-004.jpg](http://files.dodeeric.be/myfile-004.jpg), [myfile-005.png](http://files.dodeeric.be/myfile-005.png), [myfile-006.png](http://files.dodeeric.be/myfile-006.png), [myfile-007.png](http://files.dodeeric.be/myfile-007.png), [myfile-008.png](http://files.dodeeric.be/myfile-008.png), [myfile-009.png](http://files.dodeeric.be/myfile-009.png), [myfile-010.png](http://files.dodeeric.be/myfile-010.png), [myfile-011.jpg](http://files.dodeeric.be/myfile-011.jpg), [myfile-012.jpg](http://files.dodeeric.be/myfile-012.jpg), [myfile-013.jpg](http://files.dodeeric.be/myfile-013.jpg), [myfile-014.png](http://files.dodeeric.be/myfile-014.png), [myfile-015.jpg](http://files.dodeeric.be/myfile-015.jpg), [myfile-016.jpg](http://files.dodeeric.be/myfile-016.jpg), [myfile-017.jpg](http://files.dodeeric.be/myfile-017.jpg), [myfile-018.png](http://files.dodeeric.be/myfile-018.png).
