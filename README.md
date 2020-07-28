@@ -30,12 +30,6 @@ apt-get install poppler-utils bc zip file
 
 The Debian package (.deb) is available in this repository.
 
-If you install *Git*, you can also just do:
-
-```
-git clone https://github.com/dodeeric/pdf2epubEX.git
-```
-
 ## Using the Docker image
 
 A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/r/dodeeric/pdf2epubex).
