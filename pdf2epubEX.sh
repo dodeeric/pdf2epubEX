@@ -117,8 +117,8 @@ else
 fi
 
 read -p "Publisher [Default: None]: " publisher
-read -p "Year: [Default: 1900]" year
-read -p "Language: (e.g.: fr) [Default: en]: " language
+read -p "Year [Default: 1900]:" year
+read -p "Language (e.g.: fr) [Default: en]: " language
 read -p "ISBN number [Default: None]: " isbn
 read -p "Subject (e.g.: history) [Default: None]: " tags
 
