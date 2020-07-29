@@ -16,6 +16,6 @@ COPY ./pdf2epubEX.sh /bin
 
 RUN cd /bin && ln -s pdf2epubEX.sh pdf2epubEX && ln -s pdf2epubEX.sh pdf2epubex && ln -s pdf2epubEX.sh pdf2epub && ln -s pdf2epubEX.sh pdf2epub.sh && ln -s pdf2epubEX.sh pdf2epubex.sh
 
-RUN mkdir pdf
+RUN mkdir temp && ln -s temp pdf && ln -s temp files 
 
-WORKDIR /pdf
+WORKDIR /temp
