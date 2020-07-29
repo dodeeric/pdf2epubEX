@@ -116,11 +116,11 @@ else
   read -p "Author [Default: $pdfauthor]: " author
 fi
 
-read -p "Publisher: " publisher
-read -p "Year: " year
-read -p "Language: (e.g.: fr): " language
-read -p "ISBN number: " isbn
-read -p "Subject (e.g.: history): " tags
+read -p "Publisher [Default: None]: " publisher
+read -p "Year: [Default: 1900]" year
+read -p "Language: (e.g.: fr) [Default: en]: " language
+read -p "ISBN number [Default: None]: " isbn
+read -p "Subject (e.g.: history) [Default: None]: " tags
 
 if [ -z "$title" ] && [ -z "$pdftitle" ] ; then
   title="None"
@@ -147,7 +147,7 @@ if [ -z "$year" ] ; then
 fi 
 
 if [ -z "$language" ] ; then
-  language="None"
+  language="en"
 fi 
 
 if [ -z "$isbn" ] ; then
