@@ -62,7 +62,7 @@ docker run -ti --rm -v `pwd`:/pdf dodeeric/pdf2epubex pdf2htmlEX --help
 
 ### Prerequisites
 
-You need to install Docker which is available for all computer OS: Windows, MacOS, Linux and Unix. See [here](https://docs.docker.com/engine/install).
+You need to install Docker which is available for all computer operating systems: Linux, Windows and MacOS. See [here](https://docs.docker.com/engine/install).
 
 ## Parameters
 
