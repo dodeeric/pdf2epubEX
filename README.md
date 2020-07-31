@@ -6,6 +6,10 @@ The result is a *fixed layout* ePub version 3: the layout is perfectly retained 
 
 The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images). This means that the pages are not just converted into images as a lot of converters are doing.
 
+Once you have an ePub file, only if you want, you can edit it with one of the available tools (Sigil, Calibre, Kotobee, etc.) to add interactive content, add reflowable text, etc.
+
+If you want to publish an eBook on one of the available eBook stores (Google Play Books, Apple Books, Rakuten Kobo, etc.), you have to provide an ePub file and not a PDF file.
+
 ## Using the Bash script
 
 ### Usage
@@ -167,8 +171,6 @@ To read a fixed layout ePub, the best device is a tablet (Android or iOS/iPad). 
 A lot of ePub reader apps exist (to read reflowable text ePub and fixed layout ePub) available on different platforms (Android, iOS, Windows, MacOS, or Linux): [Google Play Books](https://play.google.com/store/apps/details?id=com.google.android.apps.books), [BookShelf](https://support.vitalsource.com/hc/en-us/articles/201344733-Download-Bookshelf), [PocketBook](https://pocketbook.ch/en-ch/app), [Adobe Digital Editions](https://www.adobe.com/solutions/ebook/digital-editions/download.html), [Apple Books](https://www.apple.com/apple-books) (only on iOS; formely known as Apple iBooks), etc. 
 
 Amazon Kindle does not support the standard ePub format (they have their own format which is based on the ePub format).
-
-If you want to publish an eBook on one of the available eBook stores (Google Play Books, Apple Books, Rakuten Kobo, etc.), you have to provide an ePub file and not a PDF file.
 
 To use Google Play Books, you have to go to **Settings**, then set **Enable uploading**. The uploaded eBooks (PDF or ePub) will be available on all devices using the same Google account. You can also upload eBooks from the [Google Play Books web interface](https://play.google.com/books) (see the **Upload files** button on the top right corner). Please note that: a) the ePub file has to pass a pre-check to be able to be hosted in the Google cloud; b) if you upload a PDF, all pages (text + images) will be converted into images (the text and vector images are rasterized, and no hidden text layer will be added: it means no text search or copy/paste is possible). 
  
