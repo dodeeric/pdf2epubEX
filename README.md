@@ -88,7 +88,7 @@ You need to install Docker which is available for all computer operating systems
 
 In you are running Microsoft Windows 10 Home: see [here](https://docs.docker.com/docker-for-windows/install-windows-home).
 
-1. Update Windows 10 Home from version 19.09 to 20.04 (if not done already).
+1. Update Windows 10 Home from version 19.09 to 20.04 (if not done already). To see your version: *Settings* > *System* > *About*; To upgrade: *Settings* > *Updates & Security*
 2. Install WSL1 (Windows Subsystem Linux), then update to WSL2. See [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 3. Install Docker Desktop for Windows (Stable channel). See [here](https://docs.docker.com/docker-for-windows/install-windows-home/).
 4. Open the PowerShell console.
