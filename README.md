@@ -40,6 +40,8 @@ A Docker image is vailable on [my DockerHub repository](https://hub.docker.com/r
 
 ### Usage
 
+If you are running Linux:
+
 To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
 
 ```
@@ -63,6 +65,22 @@ The result will be: myfile.html
 ```
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
 ```
+
+If you are running Windows:
+
+To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, run the following command:
+
+```
+docker run -ti --rm -v C:\Users\Eric\Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+```
+
+or
+
+```
+docker run -ti --rm -v /c/Users/Eric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+```
+
+The result will be: C:\Users\Eric\Documents\myfile.epub
 
 ### Prerequisites
 
