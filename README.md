@@ -99,7 +99,7 @@ Once you launch *pdf2epubEX.sh*, some information will be displayed like the boo
 
 - Format of the images in the epub (png, jpg or svg) [default: jpg]
 - Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]
-- Title, Author, Publisher, Year, Language: (e.g.: fr), ISBN number, Subject (e.g.: history)
+- Title, author, publisher, year, language, ISBN number, subject
 
 If you want, you can hit `ENTER` to all the questions.
 
