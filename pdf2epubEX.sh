@@ -105,9 +105,9 @@ if ! [[ "$dpi" =~ $re ]] ; then
 fi
 
 if [ -z "$pdftitle" ] ; then
-  read -p "Title [default: None]: " title
+  read -p "Title [Default: None]: " title
 else
-  read -p "Title [default: $pdftitle]: " title
+  read -p "Title [Default: $pdftitle]: " title
 fi
 
 if [ -z "$pdfauthor" ] ; then
