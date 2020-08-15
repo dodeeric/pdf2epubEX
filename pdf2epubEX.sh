@@ -48,6 +48,22 @@ heightincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $heightincm)
 
 factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
 
+read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
+
+# reflowable text - begin
+
+if [ "$epubtype" == "r" ] ; then
+
+echo "$epubtype"
+
+pdftohtml -noframes mybook.pdf
+
+exit 0
+  
+fi
+
+# reflowable text - end
+
 echo "-------------------------------------------------------------------------------------------------"
 echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
 echo "Book/PDF Height: $heightrounded inches / $heightincmrounded cm"
