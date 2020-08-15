@@ -9,6 +9,8 @@
 # Usage: ./pdf2epubEX.sh myfile.pdf
 # Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
 
+# Adding reflowable text option
+
 if [ -z "$1" ] ; then
   echo "Error: no PDF file specified." ; exit 1
 fi
