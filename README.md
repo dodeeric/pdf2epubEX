@@ -14,7 +14,7 @@ If you want to publish an eBook on one of the available eBook stores (Google Pla
 
 ### Usage
 
-To convert myfile.pdf to myfile.epub, run the following command in the directory where the PDF file is located:
+To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
 
 ```
 ./pdf2epubEX.sh myfile.pdf
@@ -33,6 +33,8 @@ apt-get install poppler-utils bc zip file
 ```
 
 The Debian package (.deb) is available in this repository.
+
+Remark: if you are not using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.), we suggest to use the Docker image (see bellow).
 
 ## Using the Docker image
 
