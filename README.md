@@ -52,6 +52,12 @@ docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
 
 The result will be: myfile.epub
 
+You can also replace ``` `pwd` ``` by the absolute path of the directory where the PDF file is located (e.g.: /home/dodeeric/Documents/myfile.pdf):
+
+```
+docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+```
+
 You can also use *pdf2htmlEX* with this same Docker image:
 
 To convert myfile.pdf to myfile.html, open the terminal and run the following command in the directory where the PDF file is located:
