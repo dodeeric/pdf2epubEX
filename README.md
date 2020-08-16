@@ -102,8 +102,8 @@ Then you can open the PowerShell terminal.
 
 If you are running MacOS: see [here](https://docs.docker.com/docker-for-mac/install).
 
-1. Donwload Desktop for Windows for MacOS: [Docker.dmg](https://download.docker.com/mac/stable/Docker.dmg).
-2. Install Desktop for Windows for MacOS.
+1. Download Docker Desktop for MacOS: [Docker.dmg](https://download.docker.com/mac/stable/Docker.dmg).
+2. Install Docker Desktop for MacOS.
 
 Then you can open the terminal (idem as for Linux).
 
