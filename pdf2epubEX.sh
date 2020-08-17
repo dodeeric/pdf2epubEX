@@ -9,7 +9,22 @@
 # Usage: ./pdf2epubEX.sh myfile.pdf
 # Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
 
-# Adding reflowable text option
+# Reflowable text option
+
+function reflowtext()
+
+{
+
+pdftohtml -noframes mybook.pdf
+
+sed -i 's/<hr\/>//g' mybook.html
+sed -i 's/<body bgcolor="#A0A0A0" vlink="blue" link="blue">/<body>/g' mybook.html
+
+exit 0
+
+}
+
+# Fixed layout option
 
 if [ -z "$1" ] ; then
   echo "Error: no PDF file specified." ; exit 1
@@ -50,19 +65,15 @@ factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
 
 read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
 
-# reflowable text - begin
+# reflowable text option: begin
 
 if [ "$epubtype" == "r" ] ; then
 
-echo "$epubtype"
+reflowtext
 
-pdftohtml -noframes mybook.pdf
-
-exit 0
-  
 fi
 
-# reflowable text - end
+# reflowable text option: end
 
 echo "-------------------------------------------------------------------------------------------------"
 echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
