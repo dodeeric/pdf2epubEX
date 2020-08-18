@@ -24,6 +24,8 @@ echo "$filename"
 
 ebook-convert "$pdffilename" "$filename".epub
 
+rm -f ./mybook.pdf 
+
 exit 0
 
 }
