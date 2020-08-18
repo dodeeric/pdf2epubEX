@@ -76,7 +76,7 @@ docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
 
 If you are running Windows:
 
-To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell terminal and run the following command:
+To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell or the Command Prompt terminal and run the following command:
 
 ```
 docker run -ti --rm -v C:\Users\Eric\Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
