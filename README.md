@@ -42,7 +42,7 @@ A Docker image is available on [my DockerHub repository](https://hub.docker.com/
 
 ### Usage
 
-If you are running Linux or MacOS:
+#### If you are running Linux or MacOS ####
 
 To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
 
@@ -74,7 +74,7 @@ The result will be: myfile.html
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
 ```
 
-If you are running Windows:
+#### If you are running Windows ####
 
 To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell or the Command Prompt terminal and run the following command:
 
