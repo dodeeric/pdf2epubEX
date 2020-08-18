@@ -9,11 +9,15 @@
 # Usage: ./pdf2epubEX.sh myfile.pdf
 # Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
 
-# Reflowable text option
+# Fixed layout ePub and reflowable text ePub
 
-function reflowtext()
+# Functions
+
+function reflowText()
 
 {
+
+askQuestions
 
 pdftohtml -noframes mybook.pdf
 
@@ -24,114 +28,9 @@ exit 0
 
 }
 
-# Fixed layout option
+function askQuestions()
 
-if [ -z "$1" ] ; then
-  echo "Error: no PDF file specified." ; exit 1
-fi
-
-if ! test -f "$1" ; then
-  echo "Error: file does not exist." ; exit 1 
-fi
-
-testfile=$(file "$1" | grep "PDF document")
-if [ -z "$testfile" ] ; then
-  echo "Error: the file is not a PDF file." ; exit 1
-fi
-
-cp $1 ./mybook.pdf
-
-widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
-heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
-
-width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
-height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
-
-widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
-heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
-
-factorratio=$(bc <<< "scale=9; $heightinpts/$widthinpts")
-
-hres=900 # Horizontal resolution in pixels
-vres=$(bc <<< "scale=0; $hres*$factorratio/1.0") # Vertical resolution in pixels
-
-widthrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $width)
-widthincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $widthincm)
-
-heightrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $height)
-heightincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $heightincm)
-
-factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
-
-read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
-
-# reflowable text option: begin
-
-if [ "$epubtype" == "r" ] ; then
-
-reflowtext
-
-fi
-
-# reflowable text option: end
-
-echo "-------------------------------------------------------------------------------------------------"
-echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
-echo "Book/PDF Height: $heightrounded inches / $heightincmrounded cm"
-echo "Factor ratio (Height / Width): $factorratiorounded"
-echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
-echo "-------------------------------------------------------------------------------------------------"
-
-read -p "Do you want to see more information on the PDF file? (y or n) [default: n]: " moreinfo
-
-nbrfonts=$(($(pdffonts $1 | wc -l)-2))
-
-if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ "$moreinfo" == "yes" ] || [ "$moreinfo" == "Yes" ] ; then
-  echo "-------------------------------------------------------------------------------------------------"
-  pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
-  echo "PDF fonts:"
-  echo "name                                 type              encoding         emb sub uni object id"
-  pdffonts $1 | tail -$nbrfonts
-  echo "-------------------------------------------------------------------------------------------------"
-fi 
-
-pdftitle=$(pdfinfo $1 2>/dev/null | grep "Title:" | cut -d " " -f11-50)
-pdfauthor=$(pdfinfo $1 2>/dev/null | grep "Author:" | cut -d " " -f10-50)
-
-echo "======================"
-echo "Caution:"
-echo "- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)."
-echo "- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files (Base64 coded); c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check." 
-echo "======================"
-
-echo "If you want, you can hit <ENTER> to all the next questions."
-
-read -p "Format of the images in the epub (png, jpg or svg) [default: jpg]: " imgformat
-
-if [ -z "$imgformat" ] ; then
-  imgformat="jpg"
-fi 
-
-if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] && [ "$imgformat" != "svg" ] ; then
-  echo "Error: image format incorrect." ; exit 1
-fi 
-
-if [ "$imgformat" != "svg" ] ; then
-  read -p "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " dpi
-fi
-
-if [ "$imgformat" == "svg" ] ; then
-  dpi=300
-fi
-
-if [ -z "$dpi" ] ; then
-  dpi=150
-fi 
-  
-re='^[0-9]+$'
-if ! [[ "$dpi" =~ $re ]] ; then
-  echo "Error: image resolution incorrect." ; exit 1
-fi
+{
 
 if [ -z "$pdftitle" ] ; then
   read -p "Title [Default: None]: " title
@@ -185,9 +84,122 @@ fi
 
 if [ -z "$tags" ] ; then
   tags="None"
+fi
+
+}
+
+# Beginning
+
+if [ -z "$1" ] ; then
+  echo "Error: no PDF file specified." ; exit 1
+fi
+
+if ! test -f "$1" ; then
+  echo "Error: file does not exist." ; exit 1 
+fi
+
+testfile=$(file "$1" | grep "PDF document")
+if [ -z "$testfile" ] ; then
+  echo "Error: the file is not a PDF file." ; exit 1
+fi
+
+cp $1 ./mybook.pdf
+
+widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
+heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
+
+width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
+height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
+
+widthincm=$(bc <<< "$widthinpts*0.0352778") # From points to cm
+heightincm=$(bc <<< "$heightinpts*0.0352778") # From points to cm
+
+factorratio=$(bc <<< "scale=9; $heightinpts/$widthinpts")
+
+hres=900 # Horizontal resolution in pixels
+vres=$(bc <<< "scale=0; $hres*$factorratio/1.0") # Vertical resolution in pixels
+
+widthrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $width)
+widthincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $widthincm)
+
+heightrounded=$(LC_NUMERIC="C" printf "%0.2f\n" $height)
+heightincmrounded=$(LC_NUMERIC="C" printf "%0.1f\n" $heightincm)
+
+factorratiorounded=$(LC_NUMERIC="C" printf "%0.2f\n" $factorratio)
+
+nbrfonts=$(($(pdffonts $1 | wc -l)-2))
+
+pdftitle=$(pdfinfo $1 | grep "Title:" | cut -d " " -f11-50)
+pdfauthor=$(pdfinfo $1 | grep "Author:" | cut -d " " -f10-50)
+
+read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
+
+# Reflowable text option: begin
+
+if [ "$epubtype" == "r" ] ; then
+
+reflowText
+
+fi
+
+# Reflowable text option: end
+
+# Fixed layout option: begin
+
+echo "-------------------------------------------------------------------------------------------------"
+echo "Book/PDF Width: $widthrounded inches / $widthincmrounded cm"
+echo "Book/PDF Height: $heightrounded inches / $heightincmrounded cm"
+echo "Factor ratio (Height / Width): $factorratiorounded"
+echo "ePub Viewport (Width x Height): $hres pixels x $vres pixels"
+echo "-------------------------------------------------------------------------------------------------"
+
+read -p "Do you want to see more information on the PDF file? (y or n) [default: n]: " moreinfo
+
+if [ "$moreinfo" == "y" ] || [ "$moreinfo" == "Y" ] || [ "$moreinfo" == "yes" ] || [ "$moreinfo" == "Yes" ] ; then
+  echo "-------------------------------------------------------------------------------------------------"
+  pdfinfo $1 | grep -v "UserProperties:" | grep -v "Suspects:" | grep -v "Form:" | grep -v "JavaScript:" | grep -v "Encrypted:" | grep -v "Page size:" | grep -v "Page rot:"
+  echo "PDF fonts:"
+  echo "name                                 type              encoding         emb sub uni object id"
+  pdffonts $1 | tail -$nbrfonts
+  echo "-------------------------------------------------------------------------------------------------"
 fi 
 
-echo "Wait..."
+echo "======================"
+echo "Caution:"
+echo "- if you chose png or jpg (bitmap formats), the vector images will be converted in bitmap images (rasterized)."
+echo "- if you chose svg (vector and bitmap format), the vector images will remain in vector format, but: a) you cannot chose the resolution of the bitmap images (it is the one from the PDF); b) the bitmap images will be included in the svg files (Base64 coded); c) this format is not always correctly rendered by eBook readers; d) the generated epub file is not always passing the epub check." 
+echo "======================"
+
+echo "If you want, you can hit <ENTER> to all the next questions."
+
+read -p "Format of the images in the epub (png, jpg or svg) [default: jpg]: " imgformat
+
+if [ -z "$imgformat" ] ; then
+  imgformat="jpg"
+fi 
+
+if [ "$imgformat" != "png" ] && [ "$imgformat" != "jpg" ] && [ "$imgformat" != "svg" ] ; then
+  echo "Error: image format incorrect." ; exit 1
+fi 
+
+if [ "$imgformat" != "svg" ] ; then
+  read -p "Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]: " dpi
+fi
+
+if [ "$imgformat" == "svg" ] ; then
+  dpi=300
+fi
+
+if [ -z "$dpi" ] ; then
+  dpi=150
+fi 
+  
+re='^[0-9]+$'
+if ! [[ "$dpi" =~ $re ]] ; then
+  echo "Error: image resolution incorrect." ; exit 1
+fi
+
+askQuestions
 
 # pdf2htmlEX: the parameter --dpi and --fit-width/fit-height are totaly independant.
 
