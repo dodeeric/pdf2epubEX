@@ -17,12 +17,12 @@ function reflowText()
 
 {
 
-askQuestions
+filename=`basename "$pdffilename" .pdf`
 
-pdftohtml -noframes mybook.pdf
+echo "$pdffilename"
+echo "$filename"
 
-sed -i 's/<hr\/>//g' mybook.html
-sed -i 's/<body bgcolor="#A0A0A0" vlink="blue" link="blue">/<body>/g' mybook.html
+ebook-convert "$pdffilename" "$filename".epub
 
 exit 0
 
@@ -104,6 +104,8 @@ if [ -z "$testfile" ] ; then
 fi
 
 cp $1 ./mybook.pdf
+
+pdffilename=$1
 
 widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
 heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
