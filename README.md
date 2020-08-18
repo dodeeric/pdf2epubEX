@@ -12,6 +12,8 @@ If you want to publish an eBook on one of the available eBook stores (Google Pla
 
 ## Using the Bash script
 
+Remark: if you are not using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.), we suggest to use the Docker image (see bellow).
+
 ### Usage
 
 To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
@@ -33,8 +35,6 @@ apt-get install poppler-utils bc zip file
 ```
 
 The Debian package (.deb) is available in this repository.
-
-Remark: if you are not using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.), we suggest to use the Docker image (see bellow).
 
 ## Using the Docker image
 
@@ -58,22 +58,6 @@ You can also replace ``` `pwd` ``` by the absolute path of the directory where t
 docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
 ```
 
-You can also use *pdf2htmlEX* with this same Docker image:
-
-To convert myfile.pdf to myfile.html, open the terminal and run the following command in the directory where the PDF file is located:
-
-```
-docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
-```
-
-The result will be: myfile.html
-
-*pdf2htmlEX* has a lot of parameters. To see them:
-
-```
-docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
-```
-
 #### If you are running Windows ####
 
 To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell or the Command Prompt terminal and run the following command:
@@ -89,6 +73,25 @@ docker run -ti --rm -v /c/Users/Eric/Documents:/temp dodeeric/pdf2epubex pdf2epu
 ```
 
 The result will be: C:\Users\Eric\Documents\myfile.epub
+
+
+#### pdf2htmlEX ####
+
+You can also use *pdf2htmlEX* with this same Docker image:
+
+To convert myfile.pdf to myfile.html, open the terminal and run the following command in the directory where the PDF file is located:
+
+```
+docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
+```
+
+The result will be: myfile.html
+
+*pdf2htmlEX* has a lot of parameters. To see them:
+
+```
+docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
+```
 
 ### Prerequisites
 
