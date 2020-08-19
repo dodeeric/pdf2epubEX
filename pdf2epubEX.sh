@@ -21,10 +21,7 @@ askQuestions
 
 filename=`basename "$pdffilename" .pdf`
 
-echo "$pdffilename"
-echo "$filename"
-
-ebook-convert --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags" "$pdffilename" "$filename".epub
+ebook-convert "$pdffilename" "$filename".epub --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
 
 rm -f ./mybook.pdf 
 
