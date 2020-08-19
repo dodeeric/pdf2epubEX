@@ -17,12 +17,14 @@ function reflowText()
 
 {
 
+askQuestions
+
 filename=`basename "$pdffilename" .pdf`
 
 echo "$pdffilename"
 echo "$filename"
 
-ebook-convert "$pdffilename" "$filename".epub
+ebook-convert --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags" "$pdffilename" "$filename".epub
 
 rm -f ./mybook.pdf 
 
