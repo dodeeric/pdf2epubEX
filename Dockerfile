@@ -15,7 +15,7 @@ RUN apt-get -q -y install poppler-utils bc zip file
 
 # Reflowable text ePub
 
-RUN python3 wget libgl1-mesa-glx
+RUN apt-get -q -y install python3 wget libgl1-mesa-glx
 RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
 # Bash script
