@@ -6,17 +6,24 @@ FROM ubuntu:focal
 
 MAINTAINER Eric Dodemont <eric.dodemont@skynet.be>
 
-# Fixed layout ePub
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get -q update && apt-get -q -y upgrade
+
+# Fixed layout ePub: install pdf2htmlEX (RC) and some other packages
 
 COPY ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb .
-RUN apt-get -q update && apt-get -q -y upgrade
 RUN apt-get -q -y install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
 RUN apt-get -q -y install poppler-utils bc zip file 
 
-# Reflowable text ePub
+# Reflowable text ePub: install ebook-convert (Beta) from Calibre
 
-RUN apt-get -q -y install python3 wget libgl1-mesa-glx
-RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
+COPY ./ebook-convert-4.99-beta.tar.gz .
+RUN tar -xzvf ebook-convert-4.99-beta.tar.gz
+RUN mv ebook-convert /usr/bin/
+RUN mv calibre-parallel /usr/bin/
+RUN mv usr-lib-calibre /usr/lib/calibre
+RUN mv usr-share-calibre /usr/share/calibre
+RUN apt-get -q -y install python3 python3-msgpack libpython3.8 libicu66 python3-dateutil python3-lxml python3-css-parser python3-pil python3-pyqt5 python3-html5-parser
 
 # Bash script
 
