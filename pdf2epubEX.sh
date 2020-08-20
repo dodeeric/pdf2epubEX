@@ -19,17 +19,21 @@ function reflowText()
 
 filename=`basename "$pdffilename" .pdf`
 
-askQuestions
+read -p "Do you want to try to dehyphenate, unwrap lines, etc.? (y or n) [default: n]: " heuristics
 
-read -p "Enable heuristics? (try to dehyphenate, unwrap lines, etc.) (y or n) [default: n]: " heuristics
+echo "======================"
+echo "Caution: converting automatically a PDF file to a reflowable text ePub file cannot be perfect. We suggest to edit the ePub file manually with Calibre or Sigil."
+echo "======================"
+
+askQuestions
 
 if [ "$heuristics" == "y" ] || [ "$heuristics" == "Y" ] || [ "$heuristics" == "yes" ] || [ "$heuristics" == "Yes" ] ; then
 
-  ebook-convert "$pdffilename" "$filename".epub --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
+  ebook-convert "$pdffilename" "$filename"-eh.epub --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
 
 else
 
-  ebook-convert "$pdffilename" "$filename".epub --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
+  ebook-convert "$pdffilename" "$filename"-dh.epub --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
 
 fi
 
