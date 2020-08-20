@@ -17,11 +17,21 @@ function reflowText()
 
 {
 
-askQuestions
-
 filename=`basename "$pdffilename" .pdf`
 
-ebook-convert "$pdffilename" "$filename".epub --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
+askQuestions
+
+read -p "Enable heuristics? (try to dehyphenate, unwrap lines, etc.) (y or n) [default: n]: " heuristics
+
+if [ "$heuristics" == "y" ] || [ "$heuristics" == "Y" ] || [ "$heuristics" == "yes" ] || [ "$heuristics" == "Yes" ] ; then
+
+  ebook-convert "$pdffilename" "$filename".epub --enable-heuristics --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
+
+else
+
+  ebook-convert "$pdffilename" "$filename".epub --title "$title" --authors "$author" --publisher "$publisher" --pubdate "$year" --language "$language" --isbn "$isbn" --tags "$tags"
+
+fi
 
 rm -f ./mybook.pdf 
 
