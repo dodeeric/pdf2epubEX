@@ -17,7 +17,7 @@ RUN apt-get -q -y install poppler-utils bc zip file
 
 # Reflowable text ePub: install ebook-convert from Calibre
 
-#RUN at-get -q -y install wget python xdg-utils xz-utils libnss3
+#RUN apt-get -q -y install wget python xdg-utils xz-utils libnss3
 #RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
 # Bash script
