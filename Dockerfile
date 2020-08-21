@@ -12,7 +12,7 @@ RUN apt-get -q update && apt-get -q -y upgrade
 # Fixed layout ePub: install pdf2htmlEX and some other packages
 
 COPY ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb .
-RUN apt-get -q -y install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
+RUN apt-get -q -y install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
 RUN apt-get -q -y install poppler-utils bc zip file 
 
 # Reflowable text ePub: install ebook-convert from Calibre
