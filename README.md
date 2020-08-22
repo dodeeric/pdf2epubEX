@@ -27,7 +27,7 @@ Result will be: myfile.epub
 ### Prerequisites
 
 - Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
-- Install *pdf2htmlEX* and some other utilities: poppler-utils, bc, zip and file. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
+- Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
 
 ```
 apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
@@ -222,22 +222,16 @@ More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed
 
 ### Reflowable text ePub
 
-This script is only converting a PDF to a fixed layout ePub. It will be of no use if you want a reflowable text ePub. 
+This script is converting a PDF to a fixed layout ePub. *pdf2htmlEX* is THE tool to maintain the original layout. Hence, it is not the best tool to extract the text and the images from a PDF.
 
-*pdf2htmlEX* is THE tool to maintain the original layout. Hence, it is not the best tool to extract the text and the images from a PDF. 
+Anyway, the script will ask if you want a reflowable text ePub or a fixed layout ePub if you:
 
-Regarding the images, *pdf2htmlEX* makes one background image per page which can include more than one image from the PDF.
+* Bash script: install the *Calibre* software (```apt-get install calibre```).
+* Docker image: use the image *dodeeric/pdf2epubex:calibre* (image much bigger than *dodeeric/pdf2epubex*).
 
-Regarding the text, even after extracting the text from a PDF, this text will have to be somewhat edited manually or automatically, for example to remove the hyphenations, remove the CR/LF at the end of each lines, remove the page numbers, move the footnotes. This is even more difficult for PDF with sophisticated layout because you will have to move some paragraphs in the correct reading order. 
+The script will use the *ebook-convert* command from *Calibre* to convert the PDF to a reflowable text ePub.
 
-If you are using Linux, you can install the *poppler-utils* package. Then you can extract the text and the images with the two following tools:
-
-PDF: [myfile.pdf](http://files.dodeeric.be/myfile.pdf) (*Install your own OpenStack Cloud*)
-
-- Extract the text: `pdftotext myfile.pdf` ==> Result: [myfile.txt](http://files.dodeeric.be/myfile.txt)
-- Extract the images: `pdfimages -all myfile.pdf ./myfile` ==> Result: [myfile-000.png](http://files.dodeeric.be/myfile-000.png), [myfile-001.png](http://files.dodeeric.be/myfile-001.png), [myfile-002.png](http://files.dodeeric.be/myfile-002.png), [myfile-003.png](http://files.dodeeric.be/myfile-003.png), [myfile-004.jpg](http://files.dodeeric.be/myfile-004.jpg), [myfile-005.png](http://files.dodeeric.be/myfile-005.png), [myfile-006.png](http://files.dodeeric.be/myfile-006.png), [myfile-007.png](http://files.dodeeric.be/myfile-007.png), [myfile-008.png](http://files.dodeeric.be/myfile-008.png), [myfile-009.png](http://files.dodeeric.be/myfile-009.png), [myfile-010.png](http://files.dodeeric.be/myfile-010.png), [myfile-011.jpg](http://files.dodeeric.be/myfile-011.jpg), [myfile-012.jpg](http://files.dodeeric.be/myfile-012.jpg), [myfile-013.jpg](http://files.dodeeric.be/myfile-013.jpg), [myfile-014.png](http://files.dodeeric.be/myfile-014.png), [myfile-015.jpg](http://files.dodeeric.be/myfile-015.jpg), [myfile-016.jpg](http://files.dodeeric.be/myfile-016.jpg), [myfile-017.jpg](http://files.dodeeric.be/myfile-017.jpg), [myfile-018.png](http://files.dodeeric.be/myfile-018.png).
-
-As you can see the text needs heavy manual editing before using a tool to convert it to a reflowable text ePub (Sigil, Calibre, Kotobee, Pandoc, etc.)
+Caution: converting automatically a PDF file to a reflowable text ePub file cannot be perfect. We suggest to edit the ePub file manually with Calibre or Sigil.
 
 ### Other Git Repositories
 
