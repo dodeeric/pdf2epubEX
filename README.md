@@ -97,20 +97,7 @@ docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
 
 You need to install Docker which is available for all computer operating systems: Linux, Windows and MacOS. See [here](https://docs.docker.com/engine/install).
 
-#### Install Docker Desktop for Windows ####
-
-If you are running Microsoft Windows 10 Home edition:
-
-1. Install WSL1 (Windows Subsystem Linux), then update to WSL2. See [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-2. Download and install Docker Desktop for Windows (Stable channel). See [here](https://docs.docker.com/docker-for-windows/install-windows-home/).
-
-Then you can open the PowerShell or the Command Prompt terminal.
-
-#### Install Docker Desktop for MacOS ####
-
-If you are running MacOS: Download and install Docker Desktop for MacOS (Stable channel). See [here](https://docs.docker.com/docker-for-mac/install).
-
-Then you can open the terminal (idem as for Linux).
+Remark: if you are running Microsoft Windows 10, you will first have to install WSL1 (Windows Subsystem Linux), then update to WSL2.
 
 ## Parameters
 
