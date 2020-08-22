@@ -9,8 +9,6 @@
 # Usage: ./pdf2epubEX.sh myfile.pdf
 # Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
 
-# Fixed layout ePub and reflowable text ePub
-
 # Functions
 
 function reflowText()
@@ -149,14 +147,16 @@ nbrfonts=$(($(pdffonts $1 | wc -l)-2))
 pdftitle=$(pdfinfo $1 | grep "Title:" | cut -d " " -f11-50)
 pdfauthor=$(pdfinfo $1 | grep "Author:" | cut -d " " -f10-50)
 
-read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
-
 # Reflowable text option: begin
 
-if [ "$epubtype" == "r" ] ; then
+if test -f /usr/bin/ebook-convert ; then
 
-reflowText
+  read -p "Do you want a fixed layout ePub or a reflowable text ePub? (f or r) [default: f]: " epubtype
 
+  if [ "$epubtype" == "r" ] ; then
+    reflowText
+  fi
+  
 fi
 
 # Reflowable text option: end
