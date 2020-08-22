@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-# App to convert a PDF file (myfile.pdf) to a fixed layout or reflowable text ePub file (myfile.epub).
+# App to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
 # By Eric Dodémont (eric.dodemont@skynet.be)
 # Belgium, July-August 2020
 
@@ -14,11 +14,6 @@ RUN apt-get -q update && apt-get -q -y upgrade
 COPY ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb .
 RUN apt-get -q -y install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
 RUN apt-get -q -y install poppler-utils bc zip file 
-
-# Reflowable text ePub: install ebook-convert from Calibre
-
-#RUN apt-get -q -y install wget python xdg-utils xz-utils libnss3
-#RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
 # Bash script
 
