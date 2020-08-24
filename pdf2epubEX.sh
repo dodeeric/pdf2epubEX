@@ -15,7 +15,7 @@ function reflowText()
 
 {
 
-filename=`basename "$pdffilename" .pdf`
+filename=$(basename "$pdffilename" .pdf)
 
 read -p "Do you want to try to dehyphenate, unwrap lines, etc.? (y or n) [default: n]: " heuristics
 
