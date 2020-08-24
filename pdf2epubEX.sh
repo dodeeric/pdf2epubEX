@@ -236,7 +236,7 @@ done
 # Rename each page file
 
 for f in *.page; do
-mv "$f" "`basename "$f" .page`.xhtml"
+mv "$f" "$(basename "$f" .page).xhtml"
 done
 
 # Remove files which are not needed in the epub
@@ -308,7 +308,7 @@ cd ./bookroot/OEBPS/
 # 1) files
 
 for f in *.xhtml; do
-ff=`basename "$f" .xhtml`
+ff=$(basename "$f" .xhtml)
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"application/xhtml+xml\"/>" >> ./content.opf
 done
 
@@ -318,7 +318,7 @@ if [ $imgformat == "png" ] ; then
 
 mv cover.png cover.xxx
 for f in *.png; do
-ff=`basename "$f" .png`
+ff=$(basename "$f" .png)
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/png\"/>" >> ./content.opf
 done
 mv cover.xxx cover.png
@@ -328,7 +328,7 @@ fi
 if [ $imgformat == "jpg" ] ; then
 
 for f in *.jpg; do
-ff=`basename "$f" .jpg`
+ff=$(basename "$f" .jpg)
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/jpeg\"/>" >> ./content.opf
 done
 
@@ -337,7 +337,7 @@ fi
 if [ $imgformat == "svg" ] ; then
 
 for f in *.svg ; do
-ff=`basename "$f" .svg`
+ff=$(basename "$f" .svg)
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"image/svg+xml\"/>" >> ./content.opf
 done
 
@@ -346,7 +346,7 @@ fi
 # 3) fonts
 
 for f in *.woff; do
-ff=`basename "$f" .woff`
+ff=$(basename "$f" .woff)
 echo -e "    <item id=\"$ff\" href=\"$f\" media-type=\"application/font-woff\"/>" >> ./content.opf
 done
 
@@ -356,7 +356,7 @@ echo -e "    <item id=\"cover-image\" href=\"cover.png\" media-type=\"image/png\
 echo -e "    <item id=\"nav\" href=\"nav.xhtml\" media-type=\"application/xhtml+xml\" properties=\"nav\"/>\n  </manifest>\n  <spine>" >> ./content.opf
 
 for f in *.xhtml; do
-ff=`basename "$f" .xhtml`
+ff=$(basename "$f" .xhtml)
 echo -e "    <itemref idref=\"$ff\" properties=\"rendition:layout-pre-paginated\"/>" >> ./content.opf
 done
 
@@ -368,7 +368,7 @@ sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 
 cd ../
 
-epubfilename=`basename "$1" .pdf`
+epubfilename=$(basename "$1" .pdf)
 epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
 
 zip -0Xq ./$epubfilename.epub mimetype && zip -Xr9Dq ./$epubfilename.epub * -x mimetype -x ./$epubfilename.epub && mv ./$epubfilename.epub ../$epubfilename.epub
