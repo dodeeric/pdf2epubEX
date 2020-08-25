@@ -19,38 +19,40 @@ Remark: if you are not using Linux Debian or a Debian based Linux distribution (
 To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
 
 ```
-./pdf2epubEX.sh myfile.pdf
+pdf2epubEX myfile.pdf
 ```
 
 Result will be: myfile.epub
 
 ### Prerequisites
 
-#### Solution 1 ####
+#### Solution n° 1 ####
+
+If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
 
 - Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
-- Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
+- Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*.
 
 ```
 apt-get install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
 apt-get install poppler-utils bc zip file
 ```
 
-The pdf2htmlEX Debian package (.deb) is available in this repository.
+The *pdf2htmlEX* Debian package (.deb) is available in this repository.
 
-#### Solution 2 #####
+With solution n° 1, you have to call the script this way:
 
-- Download the *pdf2epubEX-3.0.1-1-amd64.deb* Debian package: click [here](http://files.dodeeric.be/pdf2epubEX-3.0.1-1-amd64.deb).
+```
+./pdf2epubEX.sh myfile.pdf
+```
+
+#### Solution n° 2 #####
+
+- Download the *pdf2epubEX* Debian package: [pdf2epubEX-3.0.1-1-amd64.deb](http://files.dodeeric.be/pdf2epubEX-3.0.1-1-amd64.deb).
 - Install the package:
 
 ```
 apt-get install pdf2epubEX-3.0.1-1-amd64.deb 
-```
-
-With solution 2, you can use the script just this way:
-
-```
-pdf2epubEX myfile.pdf
 ```
 
 ## Using the Docker image
@@ -64,7 +66,7 @@ A Docker image is available on [my DockerHub repository](https://hub.docker.com/
 To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
 
 ```
-docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
 The result will be: myfile.epub
@@ -72,7 +74,7 @@ The result will be: myfile.epub
 You can also replace ``` `pwd` ``` by the absolute path of the directory where the PDF file is located (e.g.: /home/dodeeric/Documents/myfile.pdf):
 
 ```
-docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
 #### If you are running Windows ####
@@ -80,13 +82,13 @@ docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2ep
 To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell or the Command Prompt terminal and run the following command:
 
 ```
-docker run -ti --rm -v C:\Users\Eric\Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+docker run -ti --rm -v C:\Users\Eric\Documents:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
 or
 
 ```
-docker run -ti --rm -v /c/Users/Eric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX.sh myfile.pdf
+docker run -ti --rm -v /c/Users/Eric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
 The result will be: C:\Users\Eric\Documents\myfile.epub
@@ -118,7 +120,7 @@ Remark: if you are running Microsoft Windows 10, you will first have to install 
 
 ## Parameters
 
-Once you launch *pdf2epubEX.sh*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
+Once you launch *pdf2epubEX*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
 
 - Format of the images in the epub (png, jpg or svg) [default: jpg]
 - Resolution of the images in the epub in dpi (e.g.: 150 or 300) [default: 150]
