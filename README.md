@@ -48,11 +48,11 @@ With solution n° 1, you have to call the script this way:
 
 #### Solution n° 2 #####
 
-- Download the *pdf2epubEX* Debian package: [pdf2epubEX-3.0.1-1-amd64.deb](http://files.dodeeric.be/pdf2epubEX-3.0.1-1-amd64.deb).
+- Download the *pdf2epubex* Debian package: [pdf2epubex-3.0.1-1-amd64.deb](http://files.dodeeric.be/pdf2epubex-3.0.1-1-amd64.deb).
 - Install the package:
 
 ```
-sudo apt-get install ./pdf2epubEX-3.0.1-1-amd64.deb 
+sudo apt-get install ./pdf2epubex-3.0.1-1-amd64.deb 
 ```
 
 ## Using the Docker image
