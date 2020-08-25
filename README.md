@@ -26,15 +26,32 @@ Result will be: myfile.epub
 
 ### Prerequisites
 
+#### Solution 1 ####
+
 - Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
 - Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*. If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
 
 ```
-apt-get install ./pdf2htmlEX-0.18.8.rc1-master-20200630-Ubuntu-focal-x86_64.deb
+apt-get install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
 apt-get install poppler-utils bc zip file
 ```
 
-The Debian package (.deb) is available in this repository.
+The pdf2htmlEX Debian package (.deb) is available in this repository.
+
+#### Solution 2 #####
+
+- Download the *pdf2epubEX-3.0.1-1-amd64.deb* Debian package: click [here](http://files.dodeeric.be/pdf2epubEX-3.0.1-1-amd64.deb).
+- Install the package:
+
+```
+apt-get install pdf2epubEX-3.0.1-1-amd64.deb 
+```
+
+With solution 2, you can use the script just this way:
+
+```
+pdf2epubEX myfile.pdf
+```
 
 ## Using the Docker image
 
