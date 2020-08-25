@@ -34,8 +34,8 @@ If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint
 - Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*.
 
 ```
-apt-get install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
-apt-get install poppler-utils bc zip file
+sudo apt-get install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
+sudo apt-get install poppler-utils bc zip file
 ```
 
 The *pdf2htmlEX* Debian package (.deb) is available in this repository.
@@ -52,7 +52,7 @@ With solution n° 1, you have to call the script this way:
 - Install the package:
 
 ```
-apt-get install pdf2epubEX-3.0.1-1-amd64.deb 
+sudo apt-get install ./pdf2epubEX-3.0.1-1-amd64.deb 
 ```
 
 ## Using the Docker image
