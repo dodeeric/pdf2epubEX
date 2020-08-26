@@ -1,18 +1,16 @@
 # pdf2epubEX
 
-This Bash script uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
+This tool written in Bash uses the *pdf2htmlEX* tool to convert a PDF file to an ePub file.
 
 The result is a *fixed layout* ePub version 3: the layout is perfectly retained and all the fonts are embedded.
 
-The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images). This means that the pages are not just converted into images as a lot of converters are doing.
+The *pdf2htmlEX* tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
 
 Once you have an ePub file, only if you want, you can edit it with one of the available tools (Sigil, Calibre, Kotobee, etc.) to add interactive content, add reflowable text, etc.
 
 If you want to publish an eBook on one of the available eBook stores (Google Play Books, Apple Books, Rakuten Kobo, etc.), you have to provide an ePub file and not a PDF file.
 
-## Using the Bash script
-
-Remark: if you are not using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.), we suggest to use the Docker image (see bellow).
+## For Linux (Debian, Ubuntu, Mint)
 
 ### Usage
 
@@ -22,46 +20,25 @@ To convert myfile.pdf to myfile.epub, open the terminal and run the following co
 pdf2epubEX myfile.pdf
 ```
 
-Result will be: myfile.epub
+### Installation
 
-### Prerequisites
-
-#### Solution n° 1 ####
-
-If you are using Linux Debian or a Debian based Linux distribution (Ubuntu, Mint, etc.):
-
-- Download the Bash script: [pdf2epubEX.sh](https://raw.githubusercontent.com/dodeeric/pdf2epubEX/master/pdf2epubEX.sh).
-- Install *pdf2htmlEX* and some other utilities: *poppler-utils*, *bc*, *zip* and *file*.
+- Add the package repository (repository.dodeeric.be/apt):
 
 ```
-sudo apt-get install ./pdf2htmlEX-0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64.deb
-sudo apt-get install poppler-utils bc zip file
+sudo echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /tmp/dodeeric.list ; sudo mv /tmp/dodeeric.list /etc/apt/sources.list.d/
 ```
 
-The *pdf2htmlEX* Debian package (.deb) is available in this repository.
-
-With solution n° 1, you have to call the script this way:
+- Install the package (pdf2epubex):
 
 ```
-./pdf2epubEX.sh myfile.pdf
+sudo apt-get install pdf2epubex
 ```
 
-#### Solution n° 2 #####
+All the dependencies will be automatically installed.
 
-- Download the *pdf2epubex* Debian package: [pdf2epubex-3.0.1-1-amd64.deb](http://files.dodeeric.be/pdf2epubex-3.0.1-1-amd64.deb).
-- Install the package:
-
-```
-sudo apt-get install ./pdf2epubex-3.0.1-1-amd64.deb 
-```
-
-## Using the Docker image
-
-A Docker image is available on [my DockerHub repository](https://hub.docker.com/r/dodeeric/pdf2epubex).
+## For MacOS and Linux (all distributions)
 
 ### Usage
-
-#### If you are running Linux or MacOS ####
 
 To convert myfile.pdf to myfile.epub, open the terminal and run the following command in the directory where the PDF file is located:
 
@@ -69,15 +46,19 @@ To convert myfile.pdf to myfile.epub, open the terminal and run the following co
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
-The result will be: myfile.epub
-
 You can also replace ``` `pwd` ``` by the absolute path of the directory where the PDF file is located (e.g.: /home/dodeeric/Documents/myfile.pdf):
 
 ```
 docker run -ti --rm -v /home/dodeeric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
-#### If you are running Windows ####
+### Installation
+
+You need to install Docker which is available for all computer operating systems: Linux, Windows and MacOS. See [here](https://docs.docker.com/engine/install).
+
+## For Windows
+
+### Usage
 
 To convert C:\Users\Eric\Documents\myfile.pdf to C:\Users\Eric\Documents\myfile.epub, open the PowerShell or the Command Prompt terminal and run the following command:
 
@@ -91,10 +72,13 @@ or
 docker run -ti --rm -v /c/Users/Eric/Documents:/temp dodeeric/pdf2epubex pdf2epubEX myfile.pdf
 ```
 
-The result will be: C:\Users\Eric\Documents\myfile.epub
+### Installation
 
+You need to install Docker which is available for all computer operating systems: Linux, Windows and MacOS. See [here](https://docs.docker.com/engine/install).
 
-#### pdf2htmlEX ####
+Remark: You will first have to install WSL1 (Windows Subsystem Linux), then update to WSL2.
+
+## pdf2htmlEX
 
 You can also use *pdf2htmlEX* with this same Docker image:
 
@@ -103,20 +87,6 @@ To convert myfile.pdf to myfile.html, open the terminal and run the following co
 ```
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
 ```
-
-The result will be: myfile.html
-
-*pdf2htmlEX* has a lot of parameters. To see them:
-
-```
-docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX --help
-```
-
-### Prerequisites
-
-You need to install Docker which is available for all computer operating systems: Linux, Windows and MacOS. See [here](https://docs.docker.com/engine/install).
-
-Remark: if you are running Microsoft Windows 10, you will first have to install WSL1 (Windows Subsystem Linux), then update to WSL2.
 
 ## Parameters
 

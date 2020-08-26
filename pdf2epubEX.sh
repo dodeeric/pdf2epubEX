@@ -1,13 +1,8 @@
 #!/bin/bash
 
-# Bash script to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
-# By Eric Dodémont (eric.dodemont@skynet.be), Belgium, July 2020.
-# The script uses the pdf2htmlEX tool to convert a PDF file to an ePub file.
-# The result is a fixed layout ePub: the layout is perfectly retained and all the fonts are embedded.
-# The pdf2htmlEX tool converts a PDF file into HTML5 (with CSS, JS, fonts, and bitmap and/or vector images).
-# This means that the pages are not just converted into images as a lot of converters are doing.
-# Usage: ./pdf2epubEX.sh myfile.pdf
-# Prerequisites: install pdf2htmlEX and some other utilities: poppler-utils, bc, zip and file.
+# Tool to convert a PDF file (myfile.pdf) to a fixed layout ePub file (myfile.epub).
+# By Eric Dodémont (eric.dodemont@skynet.be)
+# Belgium, July-August 2020
 
 # Functions
 
