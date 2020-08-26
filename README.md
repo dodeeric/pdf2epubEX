@@ -27,6 +27,9 @@ pdf2epubEX myfile.pdf
 ```
 sudo echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /tmp/dodeeric.list ; sudo mv /tmp/dodeeric.list /etc/apt/sources.list.d/
 ```
+```
+sudo apt-get update
+```
 
 - Install the package (pdf2epubex):
 

@@ -12,7 +12,7 @@ RUN apt-get -q update && apt-get -q -y upgrade
 # Fixed layout ePub: install pdf2htmlEX and some other packages
 
 RUN echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /etc/apt/sources.list.d/dodeeric.list
-RUN apt-get -q -y install pdf2htmlex poppler-utils bc zip file 
+RUN apt-get -q update && apt-get -q -y install pdf2htmlex poppler-utils bc zip file
 
 # Reflowable text ePub: install ebook-convert from Calibre
 
