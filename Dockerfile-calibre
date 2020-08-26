@@ -25,26 +25,3 @@ COPY ./pdf2epubEX /bin
 
 RUN mkdir /temp
 WORKDIR /temp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
