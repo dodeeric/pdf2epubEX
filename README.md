@@ -25,9 +25,8 @@ pdf2epubEX myfile.pdf
 - Add the package repository (repository.dodeeric.be/apt):
 
 ```
-sudo echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /tmp/dodeeric.list ; sudo mv /tmp/dodeeric.list /etc/apt/sources.list.d/
-```
-```
+sudo echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /tmp/dodeeric.list
+sudo mv /tmp/dodeeric.list /etc/apt/sources.list.d/
 sudo apt-get update
 ```
 
