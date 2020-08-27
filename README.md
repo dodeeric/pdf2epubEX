@@ -27,13 +27,13 @@ pdf2epubEX myfile.pdf
 ```
 sudo echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /tmp/dodeeric.list
 sudo mv /tmp/dodeeric.list /etc/apt/sources.list.d/
-sudo apt-get update
+sudo apt update
 ```
 
 - Install the package (pdf2epubex):
 
 ```
-sudo apt-get install pdf2epubex
+sudo apt install pdf2epubex
 ```
 
 All the dependencies will be automatically installed.
@@ -204,7 +204,7 @@ This script is converting a PDF to a fixed layout ePub. *pdf2htmlEX* is THE tool
 
 Anyway, the script will ask if you want a reflowable text ePub or a fixed layout ePub if you:
 
-* Bash script: install the *Calibre* software (```apt-get install calibre```).
+* Bash script: install the *Calibre* software (```apt install calibre```).
 * Docker image: use the image *dodeeric/pdf2epubex:calibre* (image much bigger than *dodeeric/pdf2epubex*).
 
 The script will use the *ebook-convert* command from *Calibre* to convert the PDF to a reflowable text ePub.

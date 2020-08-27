@@ -7,17 +7,17 @@ FROM ubuntu:focal
 MAINTAINER Eric Dodemont <eric.dodemont@skynet.be>
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get -q update && apt-get -q -y upgrade
+RUN apt -q update && apt -q -y upgrade
 
 # Fixed layout ePub: install pdf2htmlEX and some other packages
 
 RUN echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /etc/apt/sources.list.d/dodeeric.list
-RUN apt-get -q -y install ca-certificates	
-RUN apt-get -q update && apt-get -q -y install pdf2htmlex poppler-utils bc zip file
+RUN apt -q -y install ca-certificates	
+RUN apt -q update && apt -q -y install pdf2htmlex poppler-utils bc zip file
 
 # Reflowable text ePub: install ebook-convert from Calibre
 
-RUN apt-get -q -y install wget python xdg-utils xz-utils libnss3
+RUN apt -q -y install wget python xdg-utils xz-utils libnss3
 RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
 
 # Bash script
