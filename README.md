@@ -202,10 +202,7 @@ More about fixed layout (FXL) ePub version 3 specifications (IDPF / W3C): [Fixed
 
 This script is converting a PDF to a fixed layout ePub. *pdf2htmlEX* is THE tool to maintain the original layout. Hence, it is not the best tool to extract the text and the images from a PDF.
 
-Anyway, the script will ask if you want a reflowable text ePub or a fixed layout ePub if you:
-
-* Bash script: install the *Calibre* software (```apt install calibre```).
-* Docker image: use the image *dodeeric/pdf2epubex:calibre* (image much bigger than *dodeeric/pdf2epubex*).
+Anyway, the script will ask if you want a reflowable text ePub or a fixed layout ePub if you install the *Calibre* software (```apt install calibre```) or if you use the image *dodeeric/pdf2epubex:calibre* (image much bigger than *dodeeric/pdf2epubex*).
 
 The script will use the *ebook-convert* command from *Calibre* to convert the PDF to a reflowable text ePub.
 
