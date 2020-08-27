@@ -113,7 +113,7 @@ The ePub cover image will be made from the first page of the PDF file (png forma
 
 ## Examples
 
-In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64, which can make the file quite big). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg, .svg); that's in fact what basicaly the *pdf2epubEX.sh* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
+In the examples below, the HTML version is one big file including everything (all the pages with HTML5, CSS, JS, fonts and images; fonts and images are coded in Base64, which can make the file quite big). *pdf2htmlEX* can also put all that content in different files (.html, .css, .js, .woff, .png, .jpg, .svg); that's in fact what basicaly the *pdf2epubEX* script does before wripping all the files in one ePub container file (.epub). Sometime, ePub is referred as "website in a box".
 
 Legends:
 
