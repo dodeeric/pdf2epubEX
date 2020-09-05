@@ -115,8 +115,8 @@ cp $1 ./mybook.pdf
 
 pdffilename=$1
 
-widthinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
-heightinpts=$(pdfinfo $1 2>/dev/null | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
+widthinpts=$(pdfinfo $1 | grep "Page size" | cut -d " " -f8) # Unit is points (pts)
+heightinpts=$(pdfinfo $1 | grep "Page size" | cut -d " " -f10) # Unit is points (pts)
 
 width=$(bc <<< "$widthinpts*0.0138889") # From points to inches
 height=$(bc <<< "$heightinpts*0.0138889") # From points to inches
