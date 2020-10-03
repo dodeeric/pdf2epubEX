@@ -255,6 +255,10 @@ rm -f pdf2htmlEX.min.js
 rm -f compatibility.min.js
 rm -f mybook.html
 
+if [ $pdf2htmlEXversion == "0.14.6" ] ; then
+  rm -f compatibility.js
+fi
+
 mkdir ./bookroot/
 mkdir ./bookroot/META-INF/
 mkdir ./bookroot/OEBPS/
@@ -306,7 +310,7 @@ if [ "$imgformat" == "svg" ] ; then
 fi
 
 date=$(date +%Y-%m-%dT%H:%M:%SZ)
-description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX, pdf2epubEX/Eric Dodemont"
+description="PDF: $1, $widthrounded inches x $heightrounded inches, $widthincmrounded cm x $heightincmrounded cm - ePub: $dpi dpi, $imgformat - Software: pdf2htmlEX $pdf2htmlEXversion, pdf2epubEX/Eric Dodemont"
 
 echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" prefix=\"rendition: http://www.idpf.org/vocab/rendition/#\" unique-identifier=\"pub-id\" version=\"3.0\">\n  <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n    <dc:identifier id=\"pub-id\">$isbn</dc:identifier>\n    <dc:title>$title</dc:title>\n    <dc:creator>$author</dc:creator>\n    <dc:publisher>$publisher</dc:publisher>\n    <dc:language>$language</dc:language>\n    <dc:subject>$tags</dc:subject>\n    <dc:date>$year</dc:date>\n    <dc:description>$description</dc:description>\n    <meta name=\"cover\" content=\"cover-image\"/>\n    <meta property=\"dcterms:modified\">$date</meta>\n    <meta property=\"rendition:layout\">pre-paginated</meta>\n    <meta property=\"rendition:spread\">auto</meta>\n  </metadata>\n  <manifest>" > ./bookroot/OEBPS/content.opf
 
@@ -376,7 +380,12 @@ sed -i 's/;unicode-bidi:bidi-override//g' base.min.css
 cd ../
 
 epubfilename=$(basename "$1" .pdf)
-epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
+
+if [ $pdf2htmlEXversion == "0.14.6" ] ; then
+  epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat"-original")
+else
+  epubfilename=$(echo $epubfilename"-"$dpi"dpi-"$imgformat)
+fi
 
 zip -0Xq ./$epubfilename.epub mimetype && zip -Xr9Dq ./$epubfilename.epub * -x mimetype -x ./$epubfilename.epub && mv ./$epubfilename.epub ../$epubfilename.epub
 
