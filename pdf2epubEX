@@ -213,9 +213,21 @@ fi
 
 askQuestions
 
+pdf2htmlEXversion=$(pdf2htmlEX -v 2>&1 | grep version | cut -d " " -f3)
+
+echo "pdf2html version: $pdf2htmlEXversion"
+
+if [ $pdf2htmlEXversion == "0.14.6" ] ; then
+
+pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --vdpi $dpi --hdpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+
+else
+
 # pdf2htmlEX: the parameter --dpi and --fit-width/fit-height are totaly independant.
 
 pdf2htmlEX --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 --split-pages 1 --bg-format $imgformat --dpi $dpi --fit-width $hres --fit-height $vres --page-filename mybook%04d.page --css-filename mybook.css mybook.pdf
+
+fi
 
 # Update the top and bottom of each page file
 
