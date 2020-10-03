@@ -215,7 +215,7 @@ askQuestions
 
 pdf2htmlEXversion=$(pdf2htmlEX -v 2>&1 | grep version | cut -d " " -f3)
 
-echo "pdf2html version: $pdf2htmlEXversion"
+echo "pdf2htmlEX version: $pdf2htmlEXversion"
 
 if [ $pdf2htmlEXversion == "0.14.6" ] ; then
 
