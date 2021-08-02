@@ -13,11 +13,12 @@ RUN apt -q update && apt -q -y upgrade
 
 RUN echo "deb [trusted=yes] https://repository.dodeeric.be/apt/ /" > /etc/apt/sources.list.d/dodeeric.list
 RUN apt -q -y install ca-certificates
-RUN apt -q update && apt -q -y install pdf2htmlex poppler-utils bc zip file
+RUN apt -q update && apt -q -y install pdf2htmlex poppler-utils bc zip file perl
 
 # Bash script
 
 COPY ./pdf2epubEX /bin
+COPY ./xmlEscape.pl /bin
 
 RUN mkdir /temp
 WORKDIR /temp
