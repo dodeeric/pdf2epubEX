@@ -65,7 +65,7 @@ else
     title="$pdftitle"
   fi
 fi 
-title=`echo ${title} | perl /bin/xmlEscape.pl`
+title=`echo ${title} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$author" ] && [ -z "$pdfauthor" ] ; then
   author="None"
@@ -74,32 +74,32 @@ else
     author="$pdfauthor"
   fi
 fi 
-author=`echo ${author} | perl /bin/xmlEscape.pl`
+author=`echo ${author} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$publisher" ] ; then
   publisher="None"
 fi 
-publisher=`echo ${publisher} | perl /bin/xmlEscape.pl`
+publisher=`echo ${publisher} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$year" ] ; then
   year="1900"
 fi 
-year=`echo ${year} | perl /bin/xmlEscape.pl`
+year=`echo ${year} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$language" ] ; then
   language="en"
 fi 
-language=`echo ${language} | perl /bin/xmlEscape.pl`
+language=`echo ${language} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$isbn" ] ; then
   isbn="None"
 fi 
-isbn=`echo ${isbn} | perl /bin/xmlEscape.pl`
+isbn=`echo ${isbn} | ruby /bin/xmlEscape.rb`
 
 if [ -z "$tags" ] ; then
   tags="None"
 fi
-tags=`echo ${tags} | perl /bin/xmlEscape.pl`
+tags=`echo ${tags} | ruby /bin/xmlEscape.rb`
 
 }
 
