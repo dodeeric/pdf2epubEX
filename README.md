@@ -90,6 +90,8 @@ To convert myfile.pdf to myfile.html, open the terminal and run the following co
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
 ```
 
+Remark: use the *dodeeric/pdf2epubex:original* to use the original version of pdf2htmlEX (coolwanglu).
+
 ## Parameters
 
 Once you launch *pdf2epubEX*, some information will be displayed like the book/PDF width and height (in inches and cm), then some questions will be asked like:
@@ -210,6 +212,6 @@ Caution: converting automatically a PDF file to a reflowable text ePub file cann
 
 ### Other Git Repositories
 
-Repositories for *pdf2htmlEX*: the [original one](https://github.com/coolwanglu/pdf2htmlEX) and the [new one](https://github.com/pdf2htmlEX/pdf2htmlEX) (with updated .deb packages).
+Repositories for *pdf2htmlEX*: the [original one](https://github.com/coolwanglu/pdf2htmlEX) (coolwanglu) and the [new one](https://github.com/pdf2htmlEX/pdf2htmlEX) (with updated .deb packages).
 
 This script is based on the Bash scripts written by Robert Clayton (RNCTX) and available in [his Git repository](https://github.com/RNCTX/PDF2HTMLEX-EPUB3FIXED).
