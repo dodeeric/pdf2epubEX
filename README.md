@@ -90,7 +90,7 @@ To convert myfile.pdf to myfile.html, open the terminal and run the following co
 docker run -ti --rm -v `pwd`:/temp dodeeric/pdf2epubex pdf2htmlEX myfile.pdf
 ```
 
-Remark: use the *dodeeric/pdf2epubex:original* to use the original version of pdf2htmlEX (coolwanglu).
+Remark: use the *dodeeric/pdf2epubex:original* Docker image to use the original version of pdf2htmlEX (coolwanglu).
 
 ## Parameters
 
